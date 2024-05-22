@@ -24,7 +24,7 @@ try {
 
         log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
-        
+
         // variables
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
@@ -32,13 +32,6 @@ try {
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
         log('sortRequest: ' + sortRequest);
-
-
-        // let sortString = String(BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, <t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />).trim());
-        
-        // log('sortString: ' + sortString);
-
-
 
         let requestString = String(sortRequest);
 
@@ -50,9 +43,9 @@ try {
 
         // log('_tagt: ' + _tag);
 
-        // let requestArray = (content.sortRequest) ? content.sortRequest.split(',') : null;
+        let requestArray = (sortRequest) ? sortRequest.split(',') : null;
 
-        // log('requestArray: ' + requestArray[0]);
+        log('requestArray: ' + requestArray);
 
 
         // defining main functions
