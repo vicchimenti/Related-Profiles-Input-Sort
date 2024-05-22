@@ -22,6 +22,33 @@ try {
             return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
         }
 
+        function processT4Tags(t4tag, contentID, sectionID, forMediaFile) {
+            let cachedContent = content || null;
+            let cachedSection = section;
+            if (typeof sectionID !== 'undefined' && sectionID !== null && Number(sectionID) > 0) {
+                cachedSection = getCachedSectionFromId(sectionID);
+            }
+            if (contentID === null && sectionID !== null) {
+                cachedContent = null;
+            } else if (typeof contentID !== 'undefined' && Number(contentID) > 0) {
+                cachedContent = getCachedContentFromId(contentID);
+                if (cachedContent == null) {
+                    throw 'Could not get cachedContent';
+                }
+            }
+            if (cachedSection == null) {
+                throw 'Could not get cachedSection';
+            }
+            if (forMediaFile !== true) {
+                forMediaFile = false;
+            }
+            let renderedHtml = String(BrokerUtils.processT4Tags(dbStatement, publishCache, cachedSection, cachedContent, language, isPreview, t4tag));
+            if (forMediaFile) {
+                renderedHtml = renderedHtml.replace(/&/gi, '&amp;');
+            }
+            return renderedHtml;
+        }
+
         log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
 
@@ -30,6 +57,8 @@ try {
         profiles, profilesOutput, output = '';
 
         let relatedNavObj = processTags('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
+
+        let relatedArray = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
         log('sortRequest: ' + sortRequest);
@@ -39,6 +68,8 @@ try {
         log('requestArray: ' + requestArray);
 
         log('relatedNavObj: ' + relatedNavObj);
+
+        log('relatedArray: ' + relatedArray);
         // Bubble Sort
 
         // 'userId'
