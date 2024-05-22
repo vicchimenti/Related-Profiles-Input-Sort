@@ -43,7 +43,7 @@ try {
 
         let sortRequest = getContentValues('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
-        log('sortRequest: ' + sortRequest);
+        log('sortRequest: ' + content.sortRequest);
 
         let requestString = + sortRequest;
 
