@@ -37,6 +37,7 @@ try {
 
         log('requestArray: ' + requestArray);
 
+        // Bubble Sort
 
         // defining main functions
         function sortByName( el1, el2 ) {
