@@ -41,13 +41,16 @@ try {
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
 
-        let sortString = String(BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim());
-        
-        log('sortString: ' + sortString);
-
         let sortRequest = getContentValues('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
         log('sortRequest: ' + content.sortRequest);
+
+
+        let sortString = String(BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, <t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />).trim());
+        
+        log('sortString: ' + sortString);
+
+
 
         let requestString = String(content.sortRequest);
 
