@@ -37,7 +37,10 @@ try {
 
         log('requestArray: ' + requestArray);
 
+        log('profilesNav: ' + profilesNav);
         // Bubble Sort
+
+        // 'userId'
 
         // defining main functions
         function sortByName( el1, el2 ) {
