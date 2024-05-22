@@ -17,6 +17,8 @@ try {
     );
     with (FullListOutputImports) {
 
+        log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
+
         /***
          *      Extract values from T4 element tags
          *      and confirm valid existing content item field
@@ -41,11 +43,11 @@ try {
 
         let sortRequest = getContentValues('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
-        console.log('sortRequest: ' +sortRequest);
+        message('sortRequest: ' +sortRequest);
 
         let requestArray = (sortRequest) ? sortRequest.split(',') : null;
 
-        console.log('requestArray: ' + requestArray[0]);
+        log('requestArray: ' + requestArray[0]);
 
 
         // defining main functions
