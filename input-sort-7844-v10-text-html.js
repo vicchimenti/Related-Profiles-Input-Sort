@@ -41,13 +41,13 @@ try {
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
 
-        let sortRequest = getContentValues('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
+        let sortRequest = '<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />';
 
         log('sortRequest: ' + content.sortRequest);
 
-        let requestArray = (content.sortRequest) ? content.sortRequest.split(',') : null;
+        // let requestArray = (content.sortRequest) ? content.sortRequest.split(',') : null;
 
-        log('requestArray: ' + requestArray[0]);
+        // log('requestArray: ' + requestArray[0]);
 
 
         // defining main functions
