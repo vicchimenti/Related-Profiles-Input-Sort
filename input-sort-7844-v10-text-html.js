@@ -16,13 +16,37 @@ try {
         com.terminalfour.sitemanager.cache.CachedContent
     );
     with (FullListOutputImports) {
+
+        /***
+         *      Extract values from T4 element tags
+         *      and confirm valid existing content item field
+         */
+        function getContentValues(tag) {
+            try {
+                let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
+                return {
+                    isError: false,
+                    content: _tag == '' ? null : _tag
+                };
+            } catch (error) {
+                return {
+                    isError: true,
+                    message: error.message
+                };
+            }
+        }
         // variables
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
 
-        let sortRequest = '<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />';
+        let sortRequest = getContentValues('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
-        
+        console.log('sortRequest: ' +sortRequest);
+
+        let requestArray = (sortRequest) ? sortRequest.split(',') : null;
+
+        console.log('requestArray: ' + requestArray[0]);
+
 
         // defining main functions
         function sortByName( el1, el2 ) {
