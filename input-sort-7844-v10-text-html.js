@@ -24,24 +24,7 @@ try {
 
         log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
-        /***
-         *      Extract values from T4 element tags
-         *      and confirm valid existing content item field
-         */
-        function getContentValues(tag) {
-            try {
-                let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
-                return {
-                    isError: false,
-                    content: _tag == '' ? null : _tag
-                };
-            } catch (error) {
-                return {
-                    isError: true,
-                    message: error.message
-                };
-            }
-        }
+        
         // variables
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
