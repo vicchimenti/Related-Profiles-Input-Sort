@@ -58,6 +58,8 @@ try {
 
         let relatedNavObj = processTags('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
 
+        let relatedNavObjString = String(relatedNavObj);
+
         let relatedArray = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
@@ -70,6 +72,9 @@ try {
         log('relatedNavObj: ' + relatedNavObj);
 
         log('relatedArray: ' + relatedArray);
+
+        log('relatedNavObjString: ' + relatedNavObjString);
+
         // Bubble Sort
 
         // 'userId'
