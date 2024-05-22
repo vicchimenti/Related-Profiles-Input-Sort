@@ -45,7 +45,7 @@ try {
 
         log('sortRequest: ' + content.sortRequest);
 
-        let requestString = + sortRequest;
+        let requestString = String(content.sortRequest);
 
         log('requestString: ' + requestString);
 
