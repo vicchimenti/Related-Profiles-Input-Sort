@@ -33,16 +33,6 @@ try {
 
         log('sortRequest: ' + sortRequest);
 
-        let requestString = String(sortRequest);
-
-        log('requestString: ' + requestString);
-
-
-        // let _tag = String.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, sortRequest).trim()
-
-
-        // log('_tagt: ' + _tag);
-
         let requestArray = (sortRequest) ? sortRequest.split(',') : null;
 
         log('requestArray: ' + requestArray);
