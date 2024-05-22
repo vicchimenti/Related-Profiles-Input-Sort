@@ -29,6 +29,7 @@ try {
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
 
+        let relatedNavObj = processTags('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
         log('sortRequest: ' + sortRequest);
@@ -37,7 +38,7 @@ try {
 
         log('requestArray: ' + requestArray);
 
-        log('profilesNav: ' + profilesNav);
+        log('relatedNavObj: ' + relatedNavObj);
         // Bubble Sort
 
         // 'userId'
