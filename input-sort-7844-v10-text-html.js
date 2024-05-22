@@ -20,6 +20,10 @@ try {
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
 
+        let sortRequest = '<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />';
+
+        
+
         // defining main functions
         function sortByName( el1, el2 ) {
             let a = el1.nameSort;
