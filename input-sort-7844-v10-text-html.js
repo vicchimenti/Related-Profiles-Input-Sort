@@ -22,6 +22,11 @@ try {
             return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
         }
 
+        function processNavObj(t4Tag) {
+            myContent = content || null;
+            return (com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
+        }
+
         function processT4Tags(t4tag, contentID, sectionID, forMediaFile) {
             let cachedContent = content || null;
             let cachedSection = section;
@@ -60,13 +65,14 @@ try {
         
         log('relatedNavObj: ' + relatedNavObj);
 
-        // let relatedNavObjUserIdDot = String(relatedNavObj.userId);
 
-        // log('relatedNavObjUserIdDot: ' + relatedNavObjUserIdDot);
+        let relatedNavObjUserIdDot = profilesNav.userId;
 
-        let relatedNavObjUserBracket = String(relatedNavObj[userId]);
+        log('relatedNavObjUserIdDot: ' + relatedNavObjUserIdDot);
 
-        log('relatedNavObjUserBracket: ' + relatedNavObjUserBracket);
+        // let relatedNavObjUserBracket = String(relatedNavObj[userId]);
+
+        // log('relatedNavObjUserBracket: ' + relatedNavObjUserBracket);
 
         let relatedArray = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
 
