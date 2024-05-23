@@ -60,9 +60,9 @@ try {
         
         log('relatedNavObj: ' + relatedNavObj);
 
-        let relatedNavObjUserIdDot = String(relatedNavObj.userId);
+        // let relatedNavObjUserIdDot = String(relatedNavObj.userId);
 
-        log('relatedNavObjUserIdDot: ' + relatedNavObjUserIdDot);
+        // log('relatedNavObjUserIdDot: ' + relatedNavObjUserIdDot);
 
         let relatedNavObjUserBracket = String(relatedNavObj[userId]);
 
