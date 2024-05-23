@@ -1,5 +1,5 @@
 /* 
-    Related Profiles
+    Related Profiles Input Sort
     v10/text/html
 
     Programmable Layout that reads in related profiles as JSON then sorts based on the nameSort node
