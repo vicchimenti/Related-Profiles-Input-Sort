@@ -66,7 +66,7 @@ try {
         log('relatedNavObj: ' + relatedNavObj);
 
 
-        let relatedNavObjUserIdDot = profilesNav.userId;
+        let relatedNavObjUserIdDot = profilesNav[0].userId;
 
         log('relatedNavObjUserIdDot: ' + relatedNavObjUserIdDot);
 
