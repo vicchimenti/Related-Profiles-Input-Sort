@@ -65,6 +65,10 @@ try {
         
         log('relatedNavObj: ' + relatedNavObj);
 
+        let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
+
+        log('relatedNavObjTest: ' + relatedNavObjTest);
+
         // let publishObj = com.terminalfour.content.element.KeywordSearchContentElement.publish('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />')
 
         // log('publishObj: ' + publishObj);
