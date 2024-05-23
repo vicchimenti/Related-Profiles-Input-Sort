@@ -69,7 +69,7 @@ try {
 
         // log('publishObj: ' + publishObj);
 
-        let valueObj = com.terminalfour.content.element.KeywordSearchContentElement.getValue('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />')
+        let valueObj = getValue('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />')
 
         log('valueObj: ' + valueObj);
 
