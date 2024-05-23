@@ -65,6 +65,13 @@ try {
         
         log('relatedNavObj: ' + relatedNavObj);
 
+        let publishObj = com.terminalfour.content.element.KeywordSearchContentElement.publish('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />')
+
+        log('publishObj: ' + publishObj);
+
+        let valueObj = com.terminalfour.content.element.KeywordSearchContentElement.getValue('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />')
+
+        log('valueObj: ' + valueObj);
 
         let relatedNavObjUserIdDot = profilesNav[0].userId;
 
