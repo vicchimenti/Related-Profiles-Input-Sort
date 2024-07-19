@@ -73,9 +73,9 @@ try {
 
         // log('publishObj: ' + publishObj);
 
-        let valueObj = getValue('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />')
+        // let valueObj = getValue('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />')
 
-        log('valueObj: ' + valueObj);
+        // log('valueObj: ' + valueObj);
 
         let relatedNavObjUserIdDot = profilesNav[0].userId;
 
