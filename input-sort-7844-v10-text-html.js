@@ -77,9 +77,9 @@ try {
 
         // log('valueObj: ' + valueObj);
 
-        let relatedNavObjUserIdDot = profilesNav[0].userId;
+        // let relatedNavObjUserIdDot = profilesNav[0].userId;
 
-        log('relatedNavObjUserIdDot: ' + relatedNavObjUserIdDot);
+        // log('relatedNavObjUserIdDot: ' + relatedNavObjUserIdDot);
 
         // let relatedNavObjUserBracket = String(relatedNavObj[userId]);
 
@@ -93,9 +93,9 @@ try {
 
         log('sortRequest: ' + sortRequest);
 
-        let requestArray = (sortRequest) ? sortRequest.split(',') : null;
+        // let requestArray = (sortRequest) ? sortRequest.split(',') : null;
 
-        log('requestArray: ' + requestArray);
+        // log('requestArray: ' + requestArray);
 
 
 
