@@ -109,6 +109,10 @@ try {
 
         log('relatedNavObjTest: ' + typeof relatedNavObjTest);
 
+        let relatedNavObjTestMap = new Map(relatedNavObjTest);
+
+        log(relatedNavObjTestMap.get("userId"));
+
         // log('relatedNavObjTest: ' + JSON.stringify(relatedNavObjTest));
 
 
