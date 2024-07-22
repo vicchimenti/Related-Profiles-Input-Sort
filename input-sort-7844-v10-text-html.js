@@ -85,7 +85,7 @@ try {
 
         log('relatedNavObjTest: ' + typeof relatedNavObjTest);
 
-        log('relatedNavObjTest: ' + JSON.stringify(relatedNavObjTest));
+        // log('relatedNavObjTest: ' + JSON.stringify(relatedNavObjTest));
 
 
 
