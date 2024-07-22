@@ -125,9 +125,13 @@ try {
 
         log('relatedArray stringify: ' + JSON.stringify(relatedArray));
 
-        for (let [key, value] of Object.entries(relatedArray)) {
-            log(`${key}: ${value}`);
-          }
+        // for (let [key, value] of Object.entries(relatedArray)) {
+        //     log(`${key}: ${value}`);
+        // }
+
+        Object.entries(relatedArray).forEach(([key, value]) => {
+            log(`${key} ${value}`);
+        })
 
         // log('relatedArray parse:' + JSON.parse(relatedArray));
 
