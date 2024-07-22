@@ -77,8 +77,8 @@ try {
 
 
         for (let i = 0; i < len; i++) {
-            log(relatedNavObjArray[i]);
-          }
+            log(relatedNavObjArray[i].replace(/^https?:\/\//, ''));
+        }
 
         // for (let element of relatedNavObjArray) {
         //     alert(element);
