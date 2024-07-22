@@ -71,6 +71,10 @@ try {
 
         log('relatedNavObjArray: ' + relatedNavObjArray);
 
+        for (let element of relatedNavObjArray) {
+            log(element);
+          }
+
 
         // let relatedNavObjObject = JSON.parse(relatedNavObj, reviver);
 
