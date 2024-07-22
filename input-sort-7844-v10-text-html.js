@@ -74,9 +74,9 @@ try {
 
         log('relatedNavObjTest: ' + relatedNavObjTest);
 
-        log('relatedNavOBJTest Values:' + Object.values(relatedNavObjTest));
+        log('relatedNavOBJTest Entries:' + Object.entries(relatedNavObjTest));
 
-        log('relatedNavOBJTest Keys:' + Object.keys(relatedNavObjTest));
+        // log('relatedNavOBJTest Keys:' + Object.keys(relatedNavObjTest));
 
 
         // let publishObj = com.terminalfour.content.element.KeywordSearchContentElement.publish('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />')
