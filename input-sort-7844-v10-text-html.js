@@ -93,19 +93,31 @@ try {
 
         log('selectedValueArray: ' + selectedValueArray);
 
-        relatedNavObjArray.array.forEach(element => {
-            sortRequest.forEach(request => {
-                if (element.includes(request)) {
-                    log('true: ' + request);
+
+        for (let i = 0; i < relatedNavObjArray.length; i++) {
+            for (request in sortRequest) {
+                if (relatedNavObjArray[i].includes(request)) {
+                    log('true: ' + relatedNavObjArray[i] + " : " + request);
                 } {
-                    log('false: ' + request);
+                    log('false: ' + relatedNavObjArray[i] + " : " + request);
                 }
 
-            });
-        });
+            }
+        }
+
+        // relatedNavObjArray.array.forEach(element => {
+        //     sortRequest.array.forEach(request => {
+        //         if (element.includes(request)) {
+        //             log('true: ' + request);
+        //         } {
+        //             log('false: ' + request);
+        //         }
+
+        //     });
+        // });
 
         // for (let element of relatedNavObjArray) {
-        //     alert(element);
+            
         // }
 
 
