@@ -125,6 +125,9 @@ try {
 
         log('relatedArray stringify: ' + JSON.stringify(relatedArray));
 
+        log('relatedArray Entries:' + Object.entries(relatedArray));
+
+
 
 
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
