@@ -65,9 +65,19 @@ try {
         
         log('relatedNavObj: ' + relatedNavObj);
 
+        log('relatedNavObj Values: ' + Object.values(relatedNavObj));
+
+        log('relatedNavObj Keys: ' + Object.keys(relatedNavObj));
+
+
         let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
 
         log('relatedNavObjTest: ' + relatedNavObjTest);
+
+        log('relatedNavOBJTest Values:' + Object.values(relatedNavObjTest));
+
+        log('relatedNavOBJTest Keys:' + Object.keys(relatedNavObjTest));
+
 
         // let publishObj = com.terminalfour.content.element.KeywordSearchContentElement.publish('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />')
 
