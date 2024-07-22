@@ -69,7 +69,7 @@ try {
 
         let relatedNavObjArray = (relatedNavObj) ? relatedNavObj.split('{') : null;
 
-        // log('relatedNavObjArray: ' + relatedNavObjArray);
+        log('relatedNavObjArray: ' + relatedNavObjArray);
 
         // let len = relatedNavObjArray.length;
 
@@ -103,7 +103,7 @@ try {
 
 
         for (let i = 0; i < relatedNavObjArray.length; i++) {
-            for (request in sortRequest) {
+            for (request in selectedRequestArray) {
                 if (relatedNavObjArray[i].includes(request)) {
                     log('true: ');
                 } {
