@@ -123,7 +123,7 @@ try {
 
         log('relatedArray: ' + typeof relatedArray);
 
-        log('relatedArray: ' + JSON.stringify(relatedArray));
+        log('relatedArray stringify: ' + JSON.stringify(relatedArray));
 
 
 
