@@ -80,6 +80,12 @@ try {
             log(relatedNavObjArray[i]);
         }
 
+        let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
+
+        log('sortRequest: ' + sortRequest);
+
+        
+
         // for (let element of relatedNavObjArray) {
         //     alert(element);
         // }
@@ -97,11 +103,11 @@ try {
 
 
 
-        let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
+        // let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
 
-        log('relatedNavObjTest: ' + relatedNavObjTest);
+        // log('relatedNavObjTest: ' + relatedNavObjTest);
 
-        log('relatedNavObjTest: ' + typeof relatedNavObjTest);
+        // log('relatedNavObjTest: ' + typeof relatedNavObjTest);
 
         // log('relatedNavObjTest: ' + JSON.stringify(relatedNavObjTest));
 
@@ -135,13 +141,13 @@ try {
 
         // log('relatedNavObjUserBracket: ' + relatedNavObjUserBracket);
 
-        let relatedArray = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
+        // let relatedArray = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
 
-        log('relatedArray: ' + relatedArray);
+        // log('relatedArray: ' + relatedArray);
 
-        log('relatedArray: ' + typeof relatedArray);
+        // log('relatedArray: ' + typeof relatedArray);
 
-        log('relatedArray stringify: ' + JSON.stringify(relatedArray));
+        // log('relatedArray stringify: ' + JSON.stringify(relatedArray));
 
         // for (let [key, value] of Object.entries(relatedArray)) {
         //     log(`${key}: ${value}`);
@@ -156,9 +162,7 @@ try {
 
 
 
-        let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
-        log('sortRequest: ' + sortRequest);
 
         // let requestArray = (sortRequest) ? sortRequest.split(',') : null;
 
