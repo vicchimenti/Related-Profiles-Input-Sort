@@ -63,35 +63,35 @@ try {
 
         let relatedNavObj = processTags('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
         
-        log('relatedNavObj: ' + relatedNavObj);
+        // log('relatedNavObj: ' + relatedNavObj);
 
-        log('relatedNavObj: ' + typeof relatedNavObj);
+        // log('relatedNavObj: ' + typeof relatedNavObj);
 
         let relatedNavObjArray = (relatedNavObj) ? relatedNavObj.split('{') : null;
 
-        log('relatedNavObjArray: ' + relatedNavObjArray);
+        // log('relatedNavObjArray: ' + relatedNavObjArray);
 
-        let len = relatedNavObjArray.length;
+        // let len = relatedNavObjArray.length;
 
-        log('len: ' + len);
+        // log('len: ' + len);
 
 
-        for (let i = 0; i < len; i++) {
-            log(relatedNavObjArray[i]);
-        }
+        // for (let i = 0; i < len; i++) {
+        //     log(relatedNavObjArray[i]);
+        // }
 
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
         log('sortRequest: ' + sortRequest);
 
 
-        let selectedValue = content.get('UserID Search').publish();
+        // let selectedValue = content.get('UserID Search').publish();
 
-        log('selectedValue: ' + selectedValue);
+        // log('selectedValue: ' + selectedValue);
 
-        let selectedValueArray = (selectedValue) ? selectedValue.split('OR') : null;
+        // let selectedValueArray = (selectedValue) ? selectedValue.split('OR') : null;
 
-        log('selectedValueArray: ' + selectedValueArray);
+        // log('selectedValueArray: ' + selectedValueArray);
 
 
         for (let i = 0; i < relatedNavObjArray.length; i++) {
@@ -133,11 +133,11 @@ try {
 
 
 
-        let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
+        // let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
 
-        log('relatedNavObjTest: ' + relatedNavObjTest);
+        // log('relatedNavObjTest: ' + relatedNavObjTest);
 
-        log('relatedNavObjTest: ' + typeof relatedNavObjTest);
+        // log('relatedNavObjTest: ' + typeof relatedNavObjTest);
 
         // let newMap = new Map (processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />'));
 
