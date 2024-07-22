@@ -89,6 +89,10 @@ try {
 
         log('selectedValue: ' + selectedValue);
 
+        let selectedValueArray = (selectedValue) ? selectedValue.split('OR') : null;
+
+        log('selectedValueArray: ' + selectedValueArray);
+
         // for (let element of relatedNavObjArray) {
         //     alert(element);
         // }
