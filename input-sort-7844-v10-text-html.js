@@ -85,6 +85,9 @@ try {
         log('sortRequest: ' + sortRequest);
 
 
+        let selectedValue = content.get('Related Profiles Input Sort Keyword Search').publish();
+
+        log('selectedValue: ' + selectedValue);
 
         // for (let element of relatedNavObjArray) {
         //     alert(element);
