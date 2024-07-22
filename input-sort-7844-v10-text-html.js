@@ -76,6 +76,8 @@ try {
 
         let relatedNavObjTestObject = JSON.parse(relatedNavObjTest);
 
+        log('Hello');
+
         log('relatedNavObjTestObject' + relatedNavObjTestObject);
 
         // log('relatedNavOBJTest Entries:' + Object.entries(relatedNavObjTest));
