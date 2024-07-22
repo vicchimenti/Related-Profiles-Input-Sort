@@ -109,7 +109,7 @@ try {
 
         log('relatedNavObjTest: ' + typeof relatedNavObjTest);
 
-        let newMap = new Map (processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />'));
+        // let newMap = new Map (processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />'));
 
         // let relatedNavObjTestMap = new Map(relatedNavObjTest);
 
