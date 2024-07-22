@@ -65,11 +65,11 @@ try {
         
         log('relatedNavObj: ' + relatedNavObj);
 
-        let relatedNavObjObject = JSON.parse(relatedNavObj, reviver);
+        // let relatedNavObjObject = JSON.parse(relatedNavObj, reviver);
 
-        log('hello');
+        // log('hello');
 
-        log('relatedNavObjObject:' + relatedNavObjObject);
+        // log('relatedNavObjObject:' + relatedNavObjObject);
 
         // log('relatedNavObj Values: ' + Object.values(relatedNavObj));
 
@@ -80,6 +80,8 @@ try {
         let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
 
         log('relatedNavObjTest: ' + relatedNavObjTest);
+
+        log(typeof relatedNavObjTest);
 
         // let relatedNavObjTestObject = JSON.parse(relatedNavObjTest);
 
