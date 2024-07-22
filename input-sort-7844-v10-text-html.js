@@ -84,7 +84,7 @@ try {
 
         log('sortRequest: ' + sortRequest);
 
-        
+
 
         // for (let element of relatedNavObjArray) {
         //     alert(element);
@@ -103,11 +103,11 @@ try {
 
 
 
-        // let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
+        let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
 
-        // log('relatedNavObjTest: ' + relatedNavObjTest);
+        log('relatedNavObjTest: ' + relatedNavObjTest);
 
-        // log('relatedNavObjTest: ' + typeof relatedNavObjTest);
+        log('relatedNavObjTest: ' + typeof relatedNavObjTest);
 
         // log('relatedNavObjTest: ' + JSON.stringify(relatedNavObjTest));
 
