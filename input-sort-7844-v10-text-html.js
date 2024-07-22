@@ -109,9 +109,11 @@ try {
 
         log('relatedNavObjTest: ' + typeof relatedNavObjTest);
 
-        let relatedNavObjTestMap = new Map(relatedNavObjTest);
+        let newMap = new Map (processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />'));
 
-        log(relatedNavObjTestMap.get("userId"));
+        // let relatedNavObjTestMap = new Map(relatedNavObjTest);
+
+        // log(relatedNavObjTestMap.get("userId"));
 
         // log('relatedNavObjTest: ' + JSON.stringify(relatedNavObjTest));
 
