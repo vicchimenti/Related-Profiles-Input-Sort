@@ -125,7 +125,7 @@ try {
 
         log('relatedArray stringify: ' + JSON.stringify(relatedArray));
 
-        for (const [key, value] of Object.entries(relatedArray)) {
+        for (let [key, value] of Object.entries(relatedArray)) {
             log(`${key}: ${value}`);
           }
 
