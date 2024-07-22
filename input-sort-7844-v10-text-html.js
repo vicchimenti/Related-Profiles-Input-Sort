@@ -65,7 +65,7 @@ try {
         
         log('relatedNavObj: ' + relatedNavObj);
 
-        let relatedNavObjObject = JSON.parse(relatedNavObj);
+        let relatedNavObjObject = JSON.parse(relatedNavObj, reviver);
 
         log('hello');
 
