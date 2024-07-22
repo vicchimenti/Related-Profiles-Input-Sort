@@ -65,9 +65,16 @@ try {
         
         log('relatedNavObj: ' + relatedNavObj);
 
+        let relatedNavObjObject = JSON.parse(relatedNavObj);
+
+        log('hello');
+
+        log('relatedNavObjObject:' + relatedNavObjObject);
+
         // log('relatedNavObj Values: ' + Object.values(relatedNavObj));
 
         // log('relatedNavObj Keys: ' + Object.keys(relatedNavObj));
+
 
 
         let relatedNavObjTest = processNavObj('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
