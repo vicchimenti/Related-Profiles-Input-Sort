@@ -65,6 +65,8 @@ try {
         
         log('relatedNavObj: ' + relatedNavObj);
 
+        log('relatedNavObj: ' + typeof relatedNavObj);
+
         // let relatedNavObjObject = JSON.parse(relatedNavObj, reviver);
 
         // log('hello');
@@ -81,7 +83,7 @@ try {
 
         log('relatedNavObjTest: ' + relatedNavObjTest);
 
-        log(typeof relatedNavObjTest);
+        log('relatedNavObjTest: ' + typeof relatedNavObjTest);
 
         // let relatedNavObjTestObject = JSON.parse(relatedNavObjTest);
 
@@ -113,6 +115,9 @@ try {
         let relatedArray = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
 
         log('relatedArray: ' + relatedArray);
+
+        log('relatedArray: ' + typeof relatedArray);
+
 
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
 
