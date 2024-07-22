@@ -85,7 +85,7 @@ try {
         log('sortRequest: ' + sortRequest);
 
 
-        let selectedValue = content.get('Related Profiles Input Sort Keyword Search').publish();
+        let selectedValue = content.get('Related Profiles Keyword Search').publish();
 
         log('selectedValue: ' + selectedValue);
 
