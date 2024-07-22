@@ -93,6 +93,17 @@ try {
 
         log('selectedValueArray: ' + selectedValueArray);
 
+        relatedNavObjArray.array.forEach(element => {
+            sortRequest.forEach(request => {
+                if (element.includes(request)) {
+                    log('true: ' + request);
+                } {
+                    log('false: ' + request);
+                }
+
+            });
+        });
+
         // for (let element of relatedNavObjArray) {
         //     alert(element);
         // }
