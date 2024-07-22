@@ -84,6 +84,14 @@ try {
 
         log('sortRequest: ' + sortRequest);
 
+        log('sortRequest: ' + typeof sortRequest);
+
+        let selectedRequestArray = (sortRequest) ? sortRequest.split(',') : null;
+
+        let sortLen = selectedRequestArray.length;
+
+        log('sortLen: ' + sortLen);
+
 
         // let selectedValue = content.get('UserID Search').publish();
 
@@ -97,9 +105,9 @@ try {
         for (let i = 0; i < relatedNavObjArray.length; i++) {
             for (request in sortRequest) {
                 if (relatedNavObjArray[i].includes(request)) {
-                    log('true: ' + relatedNavObjArray[i] + " : " + request);
+                    log('true: ');
                 } {
-                    log('false: ' + relatedNavObjArray[i] + " : " + request);
+                    log('false: ');
                 }
 
             }
