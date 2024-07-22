@@ -129,9 +129,9 @@ try {
         //     log(`${key}: ${value}`);
         // }
 
-        Object.entries(relatedArray).forEach(([key, value]) => {
-            log(`${key} ${value}`);
-        })
+        // Object.entries(relatedArray).forEach(([key, value]) => {
+        //     log(`${key} ${value}`);
+        // })
 
         // log('relatedArray parse:' + JSON.parse(relatedArray));
 
