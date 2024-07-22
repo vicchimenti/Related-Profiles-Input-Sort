@@ -74,7 +74,7 @@ try {
 
         log('relatedNavObjTest: ' + relatedNavObjTest);
 
-        log('relatedNavOBJTest Entries:' + Object.entries(relatedNavObjTest));
+        // log('relatedNavOBJTest Entries:' + Object.entries(relatedNavObjTest));
 
         // log('relatedNavOBJTest Keys:' + Object.keys(relatedNavObjTest));
 
