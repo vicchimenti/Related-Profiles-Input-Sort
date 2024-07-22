@@ -71,9 +71,18 @@ try {
 
         log('relatedNavObjArray: ' + relatedNavObjArray);
 
-        for (let element of relatedNavObjArray) {
-            alert(element);
-        }
+        let len = relatedNavObjArray.length;
+
+        log('len: ' + len);
+
+
+        for (let i = 0; i < len; i++) {
+            log(relatedNavObjArray[i]);
+          }
+
+        // for (let element of relatedNavObjArray) {
+        //     alert(element);
+        // }
 
 
         // let relatedNavObjObject = JSON.parse(relatedNavObj, reviver);
