@@ -67,6 +67,11 @@ try {
 
         log('relatedNavObj: ' + typeof relatedNavObj);
 
+        let relatedNavObjArray = (relatedNavObj) ? relatedNavObj.split('{') : null;
+
+        log('relatedNavObjArray: ' + relatedNavObjArray);
+
+
         // let relatedNavObjObject = JSON.parse(relatedNavObj, reviver);
 
         // log('hello');
