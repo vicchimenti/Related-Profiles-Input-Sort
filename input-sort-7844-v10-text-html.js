@@ -85,6 +85,11 @@ try {
 
         log('relatedNavObjTest: ' + typeof relatedNavObjTest);
 
+        log('relatedNavObjTest: ' + JSON.stringify(relatedNavObjTest));
+
+
+
+
         // let relatedNavObjTestObject = JSON.parse(relatedNavObjTest);
 
         // log('Hello');
@@ -117,6 +122,9 @@ try {
         log('relatedArray: ' + relatedArray);
 
         log('relatedArray: ' + typeof relatedArray);
+
+        log('relatedArray: ' + JSON.stringify(relatedArray));
+
 
 
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
