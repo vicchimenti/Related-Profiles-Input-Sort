@@ -71,9 +71,9 @@ try {
 
         log('relatedNavObjArray: ' + relatedNavObjArray);
 
-        // let len = relatedNavObjArray.length;
+        let len = relatedNavObjArray.length;
 
-        // log('len: ' + len);
+        log('len: ' + len);
 
 
         // for (let i = 0; i < len; i++) {
@@ -105,9 +105,9 @@ try {
         for (let i = 0; i < relatedNavObjArray.length; i++) {
             for (request in selectedRequestArray) {
                 if (relatedNavObjArray[i].includes(request)) {
-                    log('true: ');
+                    log('true: ' + relatedNavObjArray[i] + " : " + request);
                 } {
-                    log('false: ');
+                    log('false: ' + relatedNavObjArray[i] + " : " + request);
                 }
 
             }
