@@ -125,7 +125,7 @@ try {
 
         log('relatedArray stringify: ' + JSON.stringify(relatedArray));
 
-        log('relatedArray Entries:' + Object.entries(relatedArray));
+        log('relatedArray parse:' + JSON.parse(relatedArray));
 
 
 
