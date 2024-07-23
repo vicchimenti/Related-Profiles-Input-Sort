@@ -340,18 +340,18 @@ try {
 
             //     return aPriority - bPriority;
             // });
-            // profiles = profiles.sort((a, b) => {
-            //     const indexA = selectedRequestArray.indexOf(a);
-            //     const indexB = selectedRequestArray.indexOf(b);
+            profiles = profiles.sort((a, b) => {
+                const indexA = selectedRequestArray.indexOf(a);
+                const indexB = selectedRequestArray.indexOf(b);
         
-            //     // If an item is not in the priority list, put it at the end
-            //     if (indexA === -1) return 1;
-            //     if (indexB === -1) return -1;
+                // If an item is not in the priority list, put it at the end
+                // if (indexA === -1) return 1;
+                // if (indexB === -1) return -1;
         
-            //     return indexA - indexB;
-            // });
+                return indexA - indexB;
+            });
 
-            profiles.sort((a, b) => b.selectedRequestArray.includes(profiles.userId) - a.selectedRequestArray.includes(profiles.userID));
+            // profiles.sort((a, b) => b.selectedRequestArray.includes(profiles.userId) - a.selectedRequestArray.includes(profiles.userID));
 
 
             // loop through profiles to create output
