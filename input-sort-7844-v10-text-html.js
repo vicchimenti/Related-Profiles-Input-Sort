@@ -332,7 +332,17 @@ try {
           	let profilesOutput = '';
             
             // sort profiles by nameSort
-            profiles = profiles.sort(sortByName);
+            // profiles = profiles.sort(sortByName);
+            profiles = profiles.sort((a, b) => {
+                const indexA = selectedRequestArray.indexOf(a);
+                const indexB = selectedRequestArray.indexOf(b);
+        
+                // If an item is not in the priority list, put it at the end
+                if (indexA === -1) return 1;
+                if (indexB === -1) return -1;
+        
+                return indexA - indexB;
+            });
 
             // loop through profiles to create output
             for (let i=0; i<profiles.length; i++) {
