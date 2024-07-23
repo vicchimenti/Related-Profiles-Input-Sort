@@ -90,8 +90,27 @@ try {
 
         let sortLen = selectedRequestArray.length;
 
+        log('selectedRequestArray: ' + selectedRequestArray);
+
         log('sortLen: ' + sortLen);
 
+
+        // const priorityList = ["apple", "banana", "orange"];
+
+        // const fruits = ["orange", "banana", "grape", "apple"];
+
+        relatedNavObjArray.sort((a, b) => {
+        const indexA = selectedRequestArray.indexOf(a);
+        const indexB = selectedRequestArray.indexOf(b);
+
+        // If an item is not in the priority list, put it at the end
+        if (indexA === -1) return 1;
+        if (indexB === -1) return -1;
+
+        return indexA - indexB;
+        });
+
+        log('sorted relatedNavObjArray: ' + relatedNavObjArray);
 
         // let selectedValue = content.get('UserID Search').publish();
 
@@ -102,16 +121,16 @@ try {
         // log('selectedValueArray: ' + selectedValueArray);
 
 
-        for (let i = 0; i < relatedNavObjArray.length; i++) {
-            for (request in selectedRequestArray) {
-                if (relatedNavObjArray[i].includes(request)) {
-                    log('true: ' + relatedNavObjArray[i] + " : " + request);
-                } {
-                    log('false: ' + relatedNavObjArray[i] + " : " + request);
-                }
+        // for (let i = 0; i < relatedNavObjArray.length; i++) {
+        //     for (request in selectedRequestArray) {
+        //         if (relatedNavObjArray[i].includes(request)) {
+        //             log('true: ' + relatedNavObjArray[i] + " : " + request);
+        //         } {
+        //             log('false: ' + relatedNavObjArray[i] + " : " + request);
+        //         }
 
-            }
-        }
+        //     }
+        // }
 
         // relatedNavObjArray.array.forEach(element => {
         //     sortRequest.array.forEach(request => {
