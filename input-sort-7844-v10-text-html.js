@@ -116,10 +116,10 @@ try {
 
         // get user's custom sort order request
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
-        let priority = (sortRequest) ? sortRequest.split(',').trim() : null;
+        let sortRequestArray = (sortRequest) ? sortRequest.split(',') : null;
 
         // create a clean array based on the user's input
-        // let priority = sortRequestArray.map(item => item.trim());
+        let priority = sortRequestArray.map(item => item.trim());
 
         // create profiles object
         // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
