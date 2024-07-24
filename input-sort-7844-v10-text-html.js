@@ -63,9 +63,9 @@ try {
 
         let relatedNavObj = processTags('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
         
-        // log('relatedNavObj: ' + relatedNavObj);
+        log('relatedNavObj: ' + relatedNavObj);
 
-        // log('relatedNavObj: ' + typeof relatedNavObj);
+        log('relatedNavObj: ' + typeof relatedNavObj);
 
         let relatedNavObjArray = (relatedNavObj) ? relatedNavObj.split('{') : null;
 
