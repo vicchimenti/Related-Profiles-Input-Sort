@@ -339,25 +339,26 @@ try {
             // sort profiles by nameSort
             // profiles = profiles.sort(sortByName);
 
-            // profiles = profiles.sort((a, b) => {
-            //     const priorityA = priority.indexOf(a.userId);
-            //     const priorityB = priority.indexOf(b.userId);
-              
-            //     // If both items are in the priority array, sort by their priority
-            //     if (priorityA !== -1 && priorityB !== -1) {
-            //       return priorityA - priorityB;
-            // }
-
             profiles.sort((a, b) => {
-
-                log("a.userId: " + a.userId);
-                log('b.userId: ' + b.userId);
-
-                const aPriority = selectedRequestArray.includes(a.userId) ? selectedRequestArray.indexOf(a) : Infinity;
-                const bPriority = selectedRequestArray.includes(b.userId) ? selectedRequestArray.indexOf(b) : Infinity;
-
-                return aPriority - bPriority;
+                const priorityA = priority.indexOf(a.userId);
+                const priorityB = priority.indexOf(b.userId);
+              
+                // If both items are in the priority array, sort by their priority
+                if (priorityA !== -1 && priorityB !== -1) {
+                  return priorityA - priorityB;
+                }
             });
+
+            // profiles.sort((a, b) => {
+
+            //     log("a.userId: " + a.userId);
+            //     log('b.userId: ' + b.userId);
+
+            //     const aPriority = selectedRequestArray.includes(a.userId) ? selectedRequestArray.indexOf(a) : Infinity;
+            //     const bPriority = selectedRequestArray.includes(b.userId) ? selectedRequestArray.indexOf(b) : Infinity;
+
+            //     return aPriority - bPriority;
+            // });
             // profiles = profiles.sort((a, b) => {
             //     const indexA = selectedRequestArray.indexOf(a);
             //     const indexB = selectedRequestArray.indexOf(b);
