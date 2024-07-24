@@ -22,10 +22,10 @@ try {
             return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
         }
 
-        function processNavObj(t4Tag) {
-            myContent = content || null;
-            return (com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
-        }
+        // function processNavObj(t4Tag) {
+        //     myContent = content || null;
+        //     return (com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
+        // }
 
         function processT4Tags(t4tag, contentID, sectionID, forMediaFile) {
             let cachedContent = content || null;
@@ -54,10 +54,10 @@ try {
             return renderedHtml;
         }
 
+        // log function for console output
         log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
-
-        // variables
+        // declarations
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
 
@@ -68,14 +68,7 @@ try {
         // create a clean array based on the user's input
         let priority = selectedRequestArray.map(item => item.trim());
 
-
-        // defining main functions
-        // function sortByName( el1, el2 ) {
-        //     let a = el1.nameSort;
-        //     let b = el2.nameSort;
-        //     return (a < b) ? -1 : (a > b) ? 1 : 0;
-        // }
-
+        // methods
         function getCachedSectionFromId(sectionID) {
             if (typeof sectionID === 'undefined') {
                 return section
