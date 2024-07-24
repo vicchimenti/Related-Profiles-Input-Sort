@@ -1,5 +1,5 @@
 /* 
-    Related Profiles Input Sort
+    Related Profiles
     v10/text/html
 
     Programmable Layout that reads in related profiles as JSON then sorts based on the nameSort node
@@ -7,8 +7,7 @@
     This was converted to a PL to allow srting by a custom node which cannot be done through a keyword search navigation
 */
 try {
-
-    let FullListOutputImports = JavaImporter(
+    var FullListOutputImports = JavaImporter(
         com.terminalfour.publish.utils.TreeTraversalUtils,
         com.terminalfour.spring.ApplicationContextProvider,
         com.terminalfour.content.IContentManager,
@@ -16,16 +15,18 @@ try {
         com.terminalfour.publish.utils.BrokerUtils,
         com.terminalfour.sitemanager.cache.CachedContent
     );
-
     with (FullListOutputImports) {
+        // variables
+        var profilesNav = '<t4 type="navigation" name="Faculty and Staff Related Profiles" id="996" />',
+        profiles, profilesOutput, output = '';
 
+        // defining main functions
+        function sortByName( el1, el2 ) {
+            var a = el1.nameSort;
+            var b = el2.nameSort;
+            return (a < b) ? -1 : (a > b) ? 1 : 0;
+        }
 
-        // log function for console output
-        log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
-
-
-
-        // methods
         function getCachedSectionFromId(sectionID) {
             if (typeof sectionID === 'undefined') {
                 return section
@@ -61,11 +62,11 @@ try {
             if (content === null && contentID === 0) {
                 throw 'Passed Incorrect Content ID to getContentFromId'
             }
-            let contentManager = getContentManager();
+            var contentManager = getContentManager();
             if (typeof contentVersion !== 'undefined') {
                 return contentManager.get(contentID, language, Version(contentVersion))
             } else {
-                let version;
+                var version;
                 if (isPreview) {
                     version = contentManager.get(contentID, language).version;
                 } else {
@@ -76,8 +77,8 @@ try {
         }
 
         function processT4Tags(t4tag, contentID, sectionID, forMediaFile) {
-            let cachedContent = content || null;
-            let cachedSection = section;
+            var cachedContent = content || null;
+            var cachedSection = section;
             if (typeof sectionID !== 'undefined' && sectionID !== null && Number(sectionID) > 0) {
                 cachedSection = getCachedSectionFromId(sectionID);
             }
@@ -95,65 +96,28 @@ try {
             if (forMediaFile !== true) {
                 forMediaFile = false;
             }
-            let renderedHtml = String(BrokerUtils.processT4Tags(dbStatement, publishCache, cachedSection, cachedContent, language, isPreview, t4tag));
+            var renderedHtml = String(BrokerUtils.processT4Tags(dbStatement, publishCache, cachedSection, cachedContent, language, isPreview, t4tag));
             if (forMediaFile) {
                 renderedHtml = renderedHtml.replace(/&/gi, '&amp;');
             }
             return renderedHtml;
         }
 
-        function processTags(t4Tag) {
-            myContent = content || null;
-            return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
-        }
-
-
-
-        // declarations
-        let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
-        profiles, profilesOutput, output = '';
-
-        // get user's custom sort order request
-        let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
-        let sortRequestArray = (sortRequest) ? sortRequest.split(',') : null;
-
-        // create a clean array based on the user's input
-        let priority = sortRequestArray.map(item => item.trim());
 
         // create profiles object
         // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
         profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
+  
 
-
-        // if profiles exist and meet the keyword search criteria...
+        // if there are profiles...
         if (profiles.length > 0) {
-          	let profilesOutput = '';
+          	var profilesOutput = '';
             
-            // sort profiles by priotity input
-            profiles = profiles.sort((a, b) => {
-
-                const priorityA = priority.indexOf(a.userId);
-                const priorityB = priority.indexOf(b.userId);
-        
-                // If both items are in the priority array, sort by their priority
-                if (priorityA !== -1 && priorityB !== -1) {
-                  return priorityA - priorityB;
-                }
-
-                  // If only one item is in the priority array, put it first
-                if (priorityA !== -1) {
-                    return -1;
-                } else if (priorityB !== -1) {
-                    return 1;
-                } 
-
-                // If neither item is in the priority array, sort alphabetically
-                return a.userId.localeCompare(b.userId);
-            });
-
+            // sort profiles by nameSort
+            profiles = profiles.sort(sortByName);
 
             // loop through profiles to create output
-            for (let i = 0; i < profiles.length; i++) {
+            for (let i=0; i<profiles.length; i++) {
               
                 profilesOutput += ' <li class="swiper-slide oho-animate fade-in-up">\n';
                 profilesOutput += '     <article class="profiles-section--item">\n';
@@ -174,9 +138,9 @@ try {
 
             // if there is output wrap in UL tags
             if (profilesOutput != '') {
-                let primaryDept = processT4Tags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />');
+                var primaryDept = processT4Tags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />');
                 output += ' <t4 type="meta" meta="html_anchor" />';
-                output += ' <section class="profiles-section departments-profiles-swiper global-margin--15x">';
+                output += ' <section class="profiles-section departments-profiles-swiper global-margin--10x">';
                 output += '     <div class="grid-container oho-animate-sequence">\n';
                 output += '         <div class="grid-x grid-margin-x">\n';
                 output += '             <div class="cell large-9">\n';
@@ -215,10 +179,10 @@ try {
         }
     }
 } catch (err) {
-    let contentID = typeof content !== 'undefined' ? ' content ID: ' + content.getID() : '';
-    let sectionID = typeof section !== 'undefined' ? ' section ID: ' + section.getID() : '';
-    let message = 'Programmable Layout Error: ' + err + ' occurred in ' + contentID + sectionID + ')';
-    let outputImports = JavaImporter(
+    var contentID = typeof content !== 'undefined' ? ' content ID: ' + content.getID() : '';
+    var sectionID = typeof section !== 'undefined' ? ' section ID: ' + section.getID() : '';
+    var message = 'Programmable Layout Error: ' + err + ' occurred in ' + contentID + sectionID + ')';
+    var outputImports = JavaImporter(
         org.apache.commons.lang.StringEscapeUtils,
         java.lang.System
     );
