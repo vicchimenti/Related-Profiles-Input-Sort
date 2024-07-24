@@ -99,18 +99,18 @@ try {
 
         // const fruits = ["orange", "banana", "grape", "apple"];
 
-        relatedNavObjArray.sort((a, b) => {
-        const indexA = selectedRequestArray.indexOf(a);
-        const indexB = selectedRequestArray.indexOf(b);
+        // relatedNavObjArray.sort((a, b) => {
+        // const indexA = selectedRequestArray.indexOf(a);
+        // const indexB = selectedRequestArray.indexOf(b);
 
-        // If an item is not in the priority list, put it at the end
-        if (indexA === -1) return 1;
-        if (indexB === -1) return -1;
+        // // If an item is not in the priority list, put it at the end
+        // if (indexA === -1) return 1;
+        // if (indexB === -1) return -1;
 
-        return indexA - indexB;
-        });
+        // return indexA - indexB;
+        // });
 
-        log('sorted relatedNavObjArray: ' + relatedNavObjArray);
+        // log('sorted relatedNavObjArray: ' + relatedNavObjArray);
 
         // let selectedValue = content.get('UserID Search').publish();
 
