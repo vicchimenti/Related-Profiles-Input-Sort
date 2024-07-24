@@ -7,6 +7,7 @@
 
     This was converted to a PL to allow srting by a custom node which cannot be done through a keyword search navigation
 */
+
 try {
 
     let FullListOutputImports = JavaImporter(
@@ -26,7 +27,13 @@ try {
 
 
 
-        // methods
+        
+        /**
+         * 
+         *  Methods
+         * 
+         */
+
         function getCachedSectionFromId(sectionID) {
             if (typeof sectionID === 'undefined') {
                 return section
@@ -110,7 +117,12 @@ try {
 
 
 
-        // declarations
+
+        /**
+         * 
+         *  Declarations
+         * 
+         */
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
 
@@ -126,7 +138,14 @@ try {
         profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
 
 
-        // if profiles exist and meet the keyword search criteria...
+
+
+        /**
+         * 
+         * 
+         *  Sort and paint profiles
+         * 
+         */
         if (profiles.length > 0) {
           	let profilesOutput = '';
             
@@ -148,7 +167,7 @@ try {
                     return 1;
                 } 
 
-                // If neither item is in the priority array, sort alphabetically
+                // If neither item is in the priority array, sort alphabetically by lastName,firstName
                 return a.sortName.localeCompare(b.sortName);
             });
 
