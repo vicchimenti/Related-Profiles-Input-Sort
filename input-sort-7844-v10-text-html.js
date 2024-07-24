@@ -66,7 +66,7 @@ try {
         let sortRequestArray = (sortRequest) ? sortRequest.split(',') : null;
 
         // create a clean array based on the user's input
-        let priority = selectedRequestArray.map(item => item.trim());
+        let priority = sortRequestArray.map(item => item.trim());
 
         // methods
         function getCachedSectionFromId(sectionID) {
