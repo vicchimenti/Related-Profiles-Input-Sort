@@ -345,8 +345,8 @@ try {
                 const indexB = selectedRequestArray.indexOf(b);
         
                 // If an item is not in the priority list, put it at the end
-                // if (indexA === -1) return 1;
-                // if (indexB === -1) return -1;
+                if (indexA === -1) return 1;
+                if (indexB === -1) return -1;
         
                 return indexA - indexB;
             });
