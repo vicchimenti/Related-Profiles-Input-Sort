@@ -340,8 +340,8 @@ try {
             // profiles = profiles.sort(sortByName);
 
             profiles.sort((a, b) => {
-                const priorityA = priority.indexOf(a.userId);
-                const priorityB = priority.indexOf(b.userId);
+                const priorityA = selectedRequestArray.indexOf(a.userId);
+                const priorityB = selectedRequestArray.indexOf(b.userId);
               
                 // If both items are in the priority array, sort by their priority
                 if (priorityA !== -1 && priorityB !== -1) {
