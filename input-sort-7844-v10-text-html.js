@@ -341,6 +341,9 @@ try {
 
             profiles.sort((a, b) => {
 
+                log("a.userId: " + a.userId);
+                log('b.userId: ' + b.userId);
+
                 const aPriority = selectedRequestArray.includes(a.userId) ? selectedRequestArray.indexOf(a) : Infinity;
                 const bPriority = selectedRequestArray.includes(b.userId) ? selectedRequestArray.indexOf(b) : Infinity;
 
