@@ -149,7 +149,7 @@ try {
                 } 
 
                 // If neither item is in the priority array, sort alphabetically
-                return a.userId.localeCompare(b.userId);
+                return a.sortName.localeCompare(b.sortName);
             });
 
 
