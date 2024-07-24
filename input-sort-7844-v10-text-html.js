@@ -339,7 +339,7 @@ try {
             // sort profiles by nameSort
             // profiles = profiles.sort(sortByName);
 
-            profiles.sort((a, b) => {
+            profiles = profiles.sort((a, b) => {
                 const priorityA = selectedRequestArray.indexOf(a.userId);
                 const priorityB = selectedRequestArray.indexOf(b.userId);
               
