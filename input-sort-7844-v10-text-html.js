@@ -88,6 +88,8 @@ try {
 
         let selectedRequestArray = (sortRequest) ? sortRequest.split(',') : null;
 
+        const priority = selectedRequestArray;
+
         let sortLen = selectedRequestArray.length;
 
         log('selectedRequestArray: ' + selectedRequestArray);
@@ -342,11 +344,11 @@ try {
             profiles = profiles.sort((a, b) => {
 
                 log("a.userId: " + a.userId);
-                log('b.userId: ' + b.userId);
-                const priorityA = selectedRequestArray.indexOf(a.userId);
-                const priorityB = selectedRequestArray.indexOf(b.userId);
+                log("b.userId: " + b.userId);
+                const priorityA = priority.indexOf(a.userId);
+                const priorityB = priority.indexOf(b.userId);
                 log("priorityA: " + priorityA);
-                log('priorityB: ' + priorityB);
+                log("priorityB: " + priorityB);
               
                 // If both items are in the priority array, sort by their priority
                 if (priorityA !== -1 && priorityB !== -1) {
