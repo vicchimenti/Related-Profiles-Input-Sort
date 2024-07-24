@@ -325,6 +325,11 @@ try {
         // create profiles object
         // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
         profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
+
+        log ('profiles: ' + profiles);
+
+        log('profiles type: ' + typeof profiles);
+
   
 
         // if there are profiles...
