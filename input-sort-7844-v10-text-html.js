@@ -88,6 +88,8 @@ try {
 
         let selectedRequestArray = (sortRequest) ? sortRequest.split(',') : null;
 
+        let priority = selectedRequestArray.map(item => item.trim());
+
         for (let j=0; j< selectedRequestArray.length; j++) {
 
             log(selectedRequestArray[j]);
@@ -353,8 +355,8 @@ try {
 
                 log("a.userId: " + a.userId);
                 log("b.userId: " + b.userId);
-                const priorityA = selectedRequestArray.indexOf(a.userId);
-                const priorityB = selectedRequestArray.indexOf(b.userId);
+                const priorityA = priority.indexOf(a.userId);
+                const priorityB = priority.indexOf(b.userId);
                 log("priorityA: " + priorityA);
                 log("priorityB: " + priorityB);
 
