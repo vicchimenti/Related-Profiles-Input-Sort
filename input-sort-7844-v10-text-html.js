@@ -345,21 +345,11 @@ try {
         if (profiles.length > 0) {
           	let profilesOutput = '';
             
-            // sort profiles by nameSort
-            // profiles = profiles.sort(sortByName);
-
-            
-
+            // sort profiles by priotity input
             profiles = profiles.sort((a, b) => {
 
-
-                log("a.userId: " + a.userId);
-                log("b.userId: " + b.userId);
                 const priorityA = priority.indexOf(a.userId);
                 const priorityB = priority.indexOf(b.userId);
-                log("priorityA: " + priorityA);
-                log("priorityB: " + priorityB);
-
         
                 // If both items are in the priority array, sort by their priority
                 if (priorityA !== -1 && priorityB !== -1) {
@@ -377,32 +367,9 @@ try {
                 return a.userId.localeCompare(b.userId);
             });
 
-            // profiles.sort((a, b) => {
-
-            //     log("a.userId: " + a.userId);
-            //     log('b.userId: ' + b.userId);
-
-            //     const aPriority = selectedRequestArray.includes(a.userId) ? selectedRequestArray.indexOf(a) : Infinity;
-            //     const bPriority = selectedRequestArray.includes(b.userId) ? selectedRequestArray.indexOf(b) : Infinity;
-
-            //     return aPriority - bPriority;
-            // });
-            // profiles = profiles.sort((a, b) => {
-            //     const indexA = selectedRequestArray.indexOf(a);
-            //     const indexB = selectedRequestArray.indexOf(b);
-        
-            //     // If an item is not in the priority list, put it at the end
-            //     if (indexA === -1) return 1;
-            //     if (indexB === -1) return -1;
-        
-            //     return indexA - indexB;
-            // });
-
-            // profiles.sort((a, b) => b.selectedRequestArray.includes(profiles.userId) - a.selectedRequestArray.includes(profiles.userID));
-
 
             // loop through profiles to create output
-            for (let i=0; i<profiles.length; i++) {
+            for (let i = 0; i < profiles.length; i++) {
               
                 profilesOutput += ' <li class="swiper-slide oho-animate fade-in-up">\n';
                 profilesOutput += '     <article class="profiles-section--item">\n';
