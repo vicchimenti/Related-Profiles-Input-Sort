@@ -61,29 +61,12 @@ try {
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
 
-
+        // get user's custom sort order request
         let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
+        let sortRequestArray = (sortRequest) ? sortRequest.split(',') : null;
 
-        log('sortRequest: ' + sortRequest);
-
-        log('sortRequest: ' + typeof sortRequest);
-
-        let selectedRequestArray = (sortRequest) ? sortRequest.split(',') : null;
-
+        // create a clean array based on the user's input
         let priority = selectedRequestArray.map(item => item.trim());
-
-        for (let j=0; j< selectedRequestArray.length; j++) {
-
-            log(selectedRequestArray[j]);
-        }
-
-        // const priority = selectedRequestArray;
-
-        let sortLen = selectedRequestArray.length;
-
-        log('selectedRequestArray: ' + selectedRequestArray);
-
-        log('sortLen: ' + sortLen);
 
 
         // defining main functions
