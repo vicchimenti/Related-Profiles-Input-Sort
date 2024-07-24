@@ -61,19 +61,19 @@ try {
         let profilesNav = '<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />',
         profiles, profilesOutput, output = '';
 
-        let relatedNavObj = processTags('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
+        // let relatedNavObj = processTags('<t4 type="navigation" name="Related Profiles Input Sort Keyword Search" id="1064" />');
         
         // log('relatedNavObj: ' + relatedNavObj);
 
         // log('relatedNavObj: ' + typeof relatedNavObj);
 
-        let relatedNavObjArray = (relatedNavObj) ? relatedNavObj.split('{') : null;
+        // let relatedNavObjArray = (relatedNavObj) ? relatedNavObj.split('{') : null;
 
-        log('relatedNavObjArray: ' + relatedNavObjArray);
+        // log('relatedNavObjArray: ' + relatedNavObjArray);
 
-        let len = relatedNavObjArray.length;
+        // let len = relatedNavObjArray.length;
 
-        log('len: ' + len);
+        // log('len: ' + len);
 
 
         // for (let i = 0; i < len; i++) {
@@ -86,7 +86,7 @@ try {
 
         log('sortRequest: ' + typeof sortRequest);
 
-        let selectedRequestArray = (sortRequest) ? sortRequest.split(',') : null;
+        const selectedRequestArray = (sortRequest) ? sortRequest.split(',') : null;
 
         // const priority = selectedRequestArray;
 
