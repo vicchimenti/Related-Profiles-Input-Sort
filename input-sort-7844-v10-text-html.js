@@ -70,11 +70,11 @@ try {
 
 
         // defining main functions
-        function sortByName( el1, el2 ) {
-            let a = el1.nameSort;
-            let b = el2.nameSort;
-            return (a < b) ? -1 : (a > b) ? 1 : 0;
-        }
+        // function sortByName( el1, el2 ) {
+        //     let a = el1.nameSort;
+        //     let b = el2.nameSort;
+        //     return (a < b) ? -1 : (a > b) ? 1 : 0;
+        // }
 
         function getCachedSectionFromId(sectionID) {
             if (typeof sectionID === 'undefined') {
