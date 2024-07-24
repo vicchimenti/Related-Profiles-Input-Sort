@@ -22,11 +22,6 @@ try {
             return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
         }
 
-        // function processNavObj(t4Tag) {
-        //     myContent = content || null;
-        //     return (com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
-        // }
-
         function processT4Tags(t4tag, contentID, sectionID, forMediaFile) {
             let cachedContent = content || null;
             let cachedSection = section;
