@@ -7,6 +7,7 @@
     This was converted to a PL to allow srting by a custom node which cannot be done through a keyword search navigation
 */
 try {
+
     var FullListOutputImports = JavaImporter(
         com.terminalfour.publish.utils.TreeTraversalUtils,
         com.terminalfour.spring.ApplicationContextProvider,
@@ -14,9 +15,17 @@ try {
         com.terminalfour.version.Version,
         com.terminalfour.publish.utils.BrokerUtils,
         com.terminalfour.sitemanager.cache.CachedContent
+
     );
     
+    
     with (FullListOutputImports) {
+
+
+        // log function for console output
+        log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
+
+
         // variables
         var profilesNav = '<t4 type="navigation" name="Contact Listing Input Sort Keyword Search" id="1076" />',
         profiles, profilesOutput, output = '';
@@ -28,7 +37,6 @@ try {
         // create a clean array based on the user's input
         let priority = sortRequestArray.map(item => item.trim());
 
-        log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
         // defining main functions
         function sortByName( el1, el2 ) {
