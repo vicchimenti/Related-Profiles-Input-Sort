@@ -21,6 +21,13 @@ try {
         var profilesNav = '<t4 type="navigation" name="Contact Listing Input Sort Keyword Search" id="1076" />',
         profiles, profilesOutput, output = '';
 
+        // get user's custom sort order request
+        let sortRequest = processTags('<t4 type="content" name="Sort Order" output="normal" modifiers="striptags,htmlentities" />');
+        let sortRequestArray = (sortRequest) ? sortRequest.split(',') : null;
+
+        // create a clean array based on the user's input
+        let priority = sortRequestArray.map(item => item.trim());
+
         log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
         // defining main functions
