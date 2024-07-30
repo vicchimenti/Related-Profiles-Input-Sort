@@ -26,6 +26,92 @@ try {
         log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
 
+
+        /**
+         * 
+         *  Methods
+         * 
+         */
+        function getCachedSectionFromId(sectionID) {
+            if (typeof sectionID === 'undefined') {
+                return section
+            } else if (section.getID() == sectionID) {
+                return section
+            }
+            sectionID = Number(sectionID)
+            if (sectionID == 0) {
+                throw 'Passed Incorrect Section ID to getCachedSectionFromId'
+            }
+            return TreeTraversalUtils.findSection(
+                publishCache.getChannel(),
+                section,
+                sectionID,
+                language
+            )
+        }
+
+
+        function getContentManager() {
+            return ApplicationContextProvider.getBean(
+                IContentManager
+            )
+        }
+
+
+        function getCachedContentFromId(contentID, contentVersion) {
+            if (typeof contentID === 'undefined' && typeof contentVersion === 'undefined') {
+                return content
+            } else if (Number(contentID) <= 0 && typeof contentVersion !== 'undefined' && content !== null) {
+                contentID = content.getID();
+            } else {
+                contentID = Number(contentID);
+            }
+            if (content === null && contentID === 0) {
+                throw 'Passed Incorrect Content ID to getContentFromId'
+            }
+            var contentManager = getContentManager();
+            if (typeof contentVersion !== 'undefined') {
+                return contentManager.get(contentID, language, Version(contentVersion))
+            } else {
+                var version;
+                if (isPreview) {
+                    version = contentManager.get(contentID, language).version;
+                } else {
+                    version = contentManager.getLastApprovedVersion(contentID, language);
+                }
+                return contentManager.get(contentID, language, version);
+            }
+        }
+
+
+        function processT4Tags(t4tag, contentID, sectionID, forMediaFile) {
+            var cachedContent = content || null;
+            var cachedSection = section;
+            if (typeof sectionID !== 'undefined' && sectionID !== null && Number(sectionID) > 0) {
+                cachedSection = getCachedSectionFromId(sectionID);
+            }
+            if (contentID === null && sectionID !== null) {
+                cachedContent = null;
+            } else if (typeof contentID !== 'undefined' && Number(contentID) > 0) {
+                cachedContent = getCachedContentFromId(contentID);
+                if (cachedContent == null) {
+                    throw 'Could not get cachedContent';
+                }
+            }
+            if (cachedSection == null) {
+                throw 'Could not get cachedSection';
+            }
+            if (forMediaFile !== true) {
+                forMediaFile = false;
+            }
+            var renderedHtml = String(BrokerUtils.processT4Tags(dbStatement, publishCache, cachedSection, cachedContent, language, isPreview, t4tag));
+            if (forMediaFile) {
+                renderedHtml = renderedHtml.replace(/&/gi, '&amp;');
+            }
+            return renderedHtml;
+        }
+
+
         function processTags(t4Tag) {
             myContent = content || null;
             return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
@@ -55,81 +141,7 @@ try {
 
 
 
-        function getCachedSectionFromId(sectionID) {
-            if (typeof sectionID === 'undefined') {
-                return section
-            } else if (section.getID() == sectionID) {
-                return section
-            }
-            sectionID = Number(sectionID)
-            if (sectionID == 0) {
-                throw 'Passed Incorrect Section ID to getCachedSectionFromId'
-            }
-            return TreeTraversalUtils.findSection(
-                publishCache.getChannel(),
-                section,
-                sectionID,
-                language
-            )
-        }
 
-        function getContentManager() {
-            return ApplicationContextProvider.getBean(
-                IContentManager
-            )
-        }
-
-        function getCachedContentFromId(contentID, contentVersion) {
-            if (typeof contentID === 'undefined' && typeof contentVersion === 'undefined') {
-                return content
-            } else if (Number(contentID) <= 0 && typeof contentVersion !== 'undefined' && content !== null) {
-                contentID = content.getID();
-            } else {
-                contentID = Number(contentID);
-            }
-            if (content === null && contentID === 0) {
-                throw 'Passed Incorrect Content ID to getContentFromId'
-            }
-            var contentManager = getContentManager();
-            if (typeof contentVersion !== 'undefined') {
-                return contentManager.get(contentID, language, Version(contentVersion))
-            } else {
-                var version;
-                if (isPreview) {
-                    version = contentManager.get(contentID, language).version;
-                } else {
-                    version = contentManager.getLastApprovedVersion(contentID, language);
-                }
-                return contentManager.get(contentID, language, version);
-            }
-        }
-
-        function processT4Tags(t4tag, contentID, sectionID, forMediaFile) {
-            var cachedContent = content || null;
-            var cachedSection = section;
-            if (typeof sectionID !== 'undefined' && sectionID !== null && Number(sectionID) > 0) {
-                cachedSection = getCachedSectionFromId(sectionID);
-            }
-            if (contentID === null && sectionID !== null) {
-                cachedContent = null;
-            } else if (typeof contentID !== 'undefined' && Number(contentID) > 0) {
-                cachedContent = getCachedContentFromId(contentID);
-                if (cachedContent == null) {
-                    throw 'Could not get cachedContent';
-                }
-            }
-            if (cachedSection == null) {
-                throw 'Could not get cachedSection';
-            }
-            if (forMediaFile !== true) {
-                forMediaFile = false;
-            }
-            var renderedHtml = String(BrokerUtils.processT4Tags(dbStatement, publishCache, cachedSection, cachedContent, language, isPreview, t4tag));
-            if (forMediaFile) {
-                renderedHtml = renderedHtml.replace(/&/gi, '&amp;');
-            }
-            return renderedHtml;
-        }
 
         // create profiles object
         // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
