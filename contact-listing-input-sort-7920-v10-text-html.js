@@ -26,6 +26,12 @@ try {
         log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
 
+        function processTags(t4Tag) {
+            myContent = content || null;
+            return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
+        }
+
+
         // variables
         var profilesNav = '<t4 type="navigation" name="Contact Listing Input Sort Keyword Search" id="1076" />',
         profiles, profilesOutput, output = '';
