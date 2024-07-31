@@ -1,0 +1,37 @@
+<script src="<t4 type="media" id="7699116" formatter="path/*" />"></script>
+    <script>
+        if ($('#pagination-container').length && $('.add-pagination').length) {
+            $('#pagination-container').pagination({
+                dataSource: function (done) {
+                    var result = [];
+                    $('#data-container .contact--item').each(function () {
+                        result.push($(this).prop('outerHTML'));
+                    });
+                    done(result);
+                },
+                pageSize: 10,
+                autoHidePrevious: true,
+                autoHideNext: true,
+              	className: 'pagination-box',
+                ulClassName: 'pagination',
+              	activeClassName: 'currentpage',
+                prevText: '<span class="far fa-angle-left"></span> Previous',
+                nextText: 'Next <span class="far fa-angle-right"></span>',
+              	afterRender: function(){
+                    $('#pagination-container a').on("click", function(){
+                        const element = document.getElementById("data-container");
+                        var scrollToOffset = document.querySelector('.site-header').offsetHeight;
+                        var elementPosition = element.getBoundingClientRect().top;
+                        var offsetPosition = elementPosition + window.pageYOffset - scrollToOffset;
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: "smooth"
+                        });
+                    });
+                },
+                callback: function (data, pagination) {
+                    $('#data-container').html(data);
+                }
+            });
+        }
+    </script>
