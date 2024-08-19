@@ -177,6 +177,7 @@ try {
             });
 
             // loop through profiles to create output
+            log("profiles length: " + profiles.length);
             for (let i=0; i<profiles.length; i++) {
               
                 profilesOutput += '<article class="contact--item global-padding--5x">\n';
@@ -221,6 +222,8 @@ try {
                 profilesOutput += '        </div>\n';
                 profilesOutput += '    </div>\n';
                 profilesOutput += '</article>\n';
+
+                log("i = " + i);
             }
 
             // if there is output wrap in UL tags
