@@ -8,7 +8,7 @@
 */
 try {
 
-    var FullListOutputImports = JavaImporter(
+    let FullListOutputImports = JavaImporter(
         com.terminalfour.publish.utils.TreeTraversalUtils,
         com.terminalfour.spring.ApplicationContextProvider,
         com.terminalfour.content.IContentManager,
@@ -69,11 +69,11 @@ try {
             if (content === null && contentID === 0) {
                 throw 'Passed Incorrect Content ID to getContentFromId'
             }
-            var contentManager = getContentManager();
+            let contentManager = getContentManager();
             if (typeof contentVersion !== 'undefined') {
                 return contentManager.get(contentID, language, Version(contentVersion))
             } else {
-                var version;
+                let version;
                 if (isPreview) {
                     version = contentManager.get(contentID, language).version;
                 } else {
@@ -85,8 +85,8 @@ try {
 
 
         function processT4Tags(t4tag, contentID, sectionID, forMediaFile) {
-            var cachedContent = content || null;
-            var cachedSection = section;
+            let cachedContent = content || null;
+            let cachedSection = section;
             if (typeof sectionID !== 'undefined' && sectionID !== null && Number(sectionID) > 0) {
                 cachedSection = getCachedSectionFromId(sectionID);
             }
@@ -104,7 +104,7 @@ try {
             if (forMediaFile !== true) {
                 forMediaFile = false;
             }
-            var renderedHtml = String(BrokerUtils.processT4Tags(dbStatement, publishCache, cachedSection, cachedContent, language, isPreview, t4tag));
+            let renderedHtml = String(BrokerUtils.processT4Tags(dbStatement, publishCache, cachedSection, cachedContent, language, isPreview, t4tag));
             if (forMediaFile) {
                 renderedHtml = renderedHtml.replace(/&/gi, '&amp;');
             }
@@ -119,7 +119,7 @@ try {
 
 
         // variables
-        var profilesNav = '<t4 type="navigation" name="Contact Listing Input Sort Keyword Search" id="1076" />',
+        let profilesNav = '<t4 type="navigation" name="Contact Listing Input Sort Keyword Search" id="1076" />',
         profiles, profilesOutput, output = '';
 
         // get user's custom sort order request
@@ -133,8 +133,8 @@ try {
         // defining main functions
         function sortByName( el1, el2 ) {
 
-            var a = el1.nameSort;
-            var b = el2.nameSort;
+            let a = el1.nameSort;
+            let b = el2.nameSort;
 
             return (a < b) ? -1 : (a > b) ? 1 : 0;
         }
@@ -149,7 +149,7 @@ try {
   
         // if there are profiles...
         if (profiles.length > 0) {
-          	var profilesOutput = '';
+          	let profilesOutput = '';
             
             // sort profiles by nameSort
             // profiles = profiles.sort(sortByName);
@@ -265,10 +265,10 @@ try {
         }
     }
 } catch (err) {
-    var contentID = typeof content !== 'undefined' ? ' content ID: ' + content.getID() : '';
-    var sectionID = typeof section !== 'undefined' ? ' section ID: ' + section.getID() : '';
-    var message = 'Programmable Layout Error: ' + err + ' occurred in ' + contentID + sectionID + ')';
-    var outputImports = JavaImporter(
+    let contentID = typeof content !== 'undefined' ? ' content ID: ' + content.getID() : '';
+    let sectionID = typeof section !== 'undefined' ? ' section ID: ' + section.getID() : '';
+    let message = 'Programmable Layout Error: ' + err + ' occurred in ' + contentID + sectionID + ')';
+    let outputImports = JavaImporter(
         org.apache.commons.lang.StringEscapeUtils,
         java.lang.System
     );
