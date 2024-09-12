@@ -152,8 +152,8 @@ try {
             // sort profiles by priotity input
             profiles = profiles.sort((a, b) => {
 
-                const priorityA = priority.indexOf(a.userId.toLowerCase());
-                const priorityB = priority.indexOf(b.userId.toLowerCase());
+                const priorityA = priority.indexOf(a.userId);
+                const priorityB = priority.indexOf(b.userId);
         
                 // If both items are in the priority array, sort by their priority
                 if (priorityA !== -1 && priorityB !== -1) {
