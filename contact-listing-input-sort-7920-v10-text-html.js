@@ -223,7 +223,6 @@ try {
                 profilesOutput += '    </div>\n';
                 profilesOutput += '</article>\n';
 
-                log("i = " + i);
             }
 
             // if there is output wrap in UL tags
