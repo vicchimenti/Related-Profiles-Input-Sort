@@ -177,7 +177,6 @@ try {
             });
 
             // loop through profiles to create output
-            log("profiles length: " + profiles.length);
             for (let i=0; i<profiles.length; i++) {
               
                 profilesOutput += '<article class="contact--item global-padding--5x">\n';
