@@ -121,36 +121,38 @@ try {
          *      Extract values from T4 element tags
          *      and confirm valid existing content item field
          */
-        function getContentValues(tag) {
-            try {
-                let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
-                return {
-                    isError: false,
-                    content: _tag == '' ? null : _tag
-                };
-            } catch (error) {
-                return {
-                    isError: true,
-                    message: error.message
-                };
-            }
+        // function getContentValues(tag) {
+        //     try {
+        //         let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
+        //         return {
+        //             isError: false,
+        //             content: _tag == '' ? null : _tag
+        //         };
+        //     } catch (error) {
+        //         return {
+        //             isError: true,
+        //             message: error.message
+        //         };
+        //     }
+        // }
+
+        function processTags(t4Tag) {
+            myContent = content || null;
+            return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
         }
 
-
         /***
-         *      content dictionary of optional elements
+         *      optional elements
          *      
          */
-        let contactListingDict = {
+        let = h2Heading = processT4Tags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
+        let = generalDescription = processT4Tags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />');
+        let = linkTitle = processT4Tags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />');
+        let = internalLinkURL = processT4Tags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />');
+        let = internalLinkText = processT4Tags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />');
+        let = externalLink = processT4Tags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />');
 
-            h2Heading = getContentValues('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
-            generalDescription = getContentValues('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
-            linkTitle = getContentValues('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />'),
-            internalLinkURL = getContentValues('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />'),
-            internalLinkText = getContentValues('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />'),
-            externalLink = getContentValues('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />')
-
-        };
+ 
 
         
 
@@ -220,16 +222,16 @@ try {
                 output += '        <div class="grid-x grid-margin-x">\n';
                 output += '            <div class="cell large-9">\n';
                 output += '                <div class="section-heading--basic text-margin-reset">\n';
-                if (contactListingDict.h2Heading.content) {
-                    output += '<h2 class="oho-animate fade-in">' + contactListingDict.h2Heading.content + '</h2>\n';
+                if (h2Heading) {
+                    output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
                 }
-                if (contactListingDict.generalDescription.content) {
-                    output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + contactListingDict.generalDescription.content + '</p></div>\n';
+                if (generalDescription) {
+                    output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + generalDescription + '</p></div>\n';
                 }
-                if ((contactListingDict.linkTitle.content) && (contactListingDict.internalLinkURL.content && contactListingDict.internalLinkText.content )) {
-                    output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ contactListingDict.internalLinkURL.content + '" title="' + contactListingDict.internalLinkText.content + '">' + contactListingDict.linkTitle.content + '</a></div>\n';
-                } else if (contactListingDict.linkTitle.content && contactListingDict.externalLink.content) {
-                        output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ contactListingDict.internalLinkURL.content + '" title="' + contactListingDict.linkTitle.content + '">' + contactListingDict.linkTitle.content + '</a></div>\n';
+                if ((linkTitle) && (internalLinkURL && internalLinkText)) {
+                    output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ internalLinkURL + '" title="' + internalLinkText + '">' + linkTitle + '</a></div>\n';
+                } else if (linkTitle && externalLink) {
+                        output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ externalLink+ '" title="' + linkTitle + '">' + linkTitle + '</a></div>\n';
                 }
                 output += '                </div>\n';
                 output += '            </div>\n';
