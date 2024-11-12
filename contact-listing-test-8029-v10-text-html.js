@@ -19,6 +19,12 @@ try {
     with (FullListOutputImports) {
 
         /***
+         *      Console Log
+         */
+        log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
+
+
+        /***
          *      Extract values from T4 element tags
          *      and confirm valid existing content item field
          */
@@ -37,14 +43,21 @@ try {
             }
         }
 
-        contactListing {
+        let contactListingDict = {
+
+            h2Heading = getContentValues('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
+            generalDescription = getContentValues('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
+            linkTitle = getContentValues('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />'),
+            internalLinkURL = getContentValues('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />'),
+            internalLinkText = getContentValues('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />'),
+            externalLink = getContentValues('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />'),
 
         }
+
         // variables
-        var profilesNav = '<t4 type="navigation" name="Contact Listing Test" id="1088" />',
+        let profilesNav = '<t4 type="navigation" name="Contact Listing Test" id="1088" />',
         profiles, profilesOutput, output = '';
 
-        log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
         // defining main functions
         function sortByName( el1, el2 ) {
