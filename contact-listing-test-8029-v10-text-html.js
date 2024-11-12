@@ -180,9 +180,9 @@ try {
                 if (h2Heading != '') {
                     output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
                 }
-                output += '                    <h2 class="oho-animate fade-in">\n';
-                output += '                        <t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />\n';
-                output += '                    </h2>\n';
+                // output += '                    <h2 class="oho-animate fade-in">\n';
+                // output += '                        <t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />\n';
+                // output += '                    </h2>\n';
                 output += '                    <div class="global-spacing--2x oho-animate fade-in">\n';
                 output += '                        <p>\n';
                 output += '                            <t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />\n';
