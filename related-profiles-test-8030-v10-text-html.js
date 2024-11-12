@@ -124,9 +124,9 @@ try {
             generalDescription: processTags('<t4 type="content" name="General Description" output="normal" modifiers="nl2br" />')
 
         };
-        let primaryDept = processTags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />');
-        let h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
-        let generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="nl2br" />');
+        // let primaryDept = processTags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />');
+        // let h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
+        // let generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="nl2br" />');
 
         // create profiles object
         // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
@@ -175,7 +175,7 @@ try {
                     output += '<div class="global-spacing--2x oho-animate fade-in">' + optional.generalDescription + '</div>';
                 }
                 if (optional.primaryDept) {
-                    output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>';
+                    output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + optional.primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>';
                 }
                 if (optional.h2Heading || optional.generalDescription || optional.primaryDept) {
                     output += '</div></div></div>';
