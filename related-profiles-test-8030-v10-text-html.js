@@ -161,24 +161,18 @@ try {
                 if (h2Heading || generalDescription || primaryDept) {
                     output += '<div class="grid-x grid-margin-x"><div class="cell large-9"><div class="section-heading--basic text-margin-reset">';
                 }
-                // output += '         <div class="grid-x grid-margin-x">\n';
-                // output += '             <div class="cell large-9">\n';
-                // output += '                 <div class="section-heading--basic text-margin-reset">\n';
                 if (h2Heading != '') {
-                    output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
+                    output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>';
                 }
                 if (generalDescription) {
                     output += '<div class="global-spacing--2x oho-animate fade-in">' + generalDescription + '</div>';
                 }
                 if (primaryDept != '') {
-                    output += '                     <div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>\n';
+                    output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>';
                 }
                 if (h2Heading || generalDescription || primaryDept) {
                     output += '</div></div></div>';
                 }
-                // output += '                 </div>\n';
-                // output += '             </div>\n';
-                // output += '         </div>\n';
                 output += '         <div class="global-spacing--6x">\n';
                 output += '             <div class="swiper-container oho-animate-sequence">\n';
                 output += '                 <ul class="swiper-wrapper">\n';
