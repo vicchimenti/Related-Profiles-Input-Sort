@@ -24,42 +24,6 @@ try {
         log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
 
-        /***
-         *      Extract values from T4 element tags
-         *      and confirm valid existing content item field
-         */
-        function getContentValues(tag) {
-            try {
-                let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
-                return {
-                    isError: false,
-                    content: _tag == '' ? null : _tag
-                };
-            } catch (error) {
-                return {
-                    isError: true,
-                    message: error.message
-                };
-            }
-        }
-
-
-
-        /***
-         *      content dictionary of optional elements
-         *      
-         */
-        let contactListingDict = {
-
-            h2Heading = getContentValues('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
-            generalDescription = getContentValues('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
-            linkTitle = getContentValues('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />'),
-            internalLinkURL = getContentValues('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />'),
-            internalLinkText = getContentValues('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />'),
-            externalLink = getContentValues('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />'),
-
-        }
-
         // variables
         let profilesNav = '<t4 type="navigation" name="Contact Listing Test" id="1088" />',
         profiles, profilesOutput, output = '';
@@ -151,6 +115,44 @@ try {
             }
             return renderedHtml;
         }
+
+
+        /***
+         *      Extract values from T4 element tags
+         *      and confirm valid existing content item field
+         */
+        function getContentValues(tag) {
+            try {
+                let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
+                return {
+                    isError: false,
+                    content: _tag == '' ? null : _tag
+                };
+            } catch (error) {
+                return {
+                    isError: true,
+                    message: error.message
+                };
+            }
+        }
+
+
+        /***
+         *      content dictionary of optional elements
+         *      
+         */
+        let contactListingDict = {
+
+            h2Heading = getContentValues('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
+            generalDescription = getContentValues('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
+            linkTitle = getContentValues('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />'),
+            internalLinkURL = getContentValues('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />'),
+            internalLinkText = getContentValues('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />'),
+            externalLink = getContentValues('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />')
+
+        }
+
+        
 
         // create profiles object
         // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
