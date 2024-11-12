@@ -126,19 +126,19 @@ try {
          *      optional elements
          *      
          */
-        let dict = {
+        // let dict = {
             
-            h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
-            generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
-            linkTitle = processTags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />'),
-            internalLinkURL = processTags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />'),
-            internalLinkText = processTags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />'),
-            externalLink = processTags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />'),
+        //     h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
+        //     generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
+        //     linkTitle = processTags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />'),
+        //     internalLinkURL = processTags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />'),
+        //     internalLinkText = processTags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />'),
+        //     externalLink = processTags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />'),
 
-        };
+        // };
 
-        // let h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
-        // let generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />');
+        let h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
+        let generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />');
         let linkTitle = processTags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />');
         let internalLinkURL = processTags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />');
         let internalLinkText = processTags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />');
@@ -214,11 +214,11 @@ try {
                 output += '        <div class="grid-x grid-margin-x">\n';
                 output += '            <div class="cell large-9">\n';
                 output += '                <div class="section-heading--basic text-margin-reset">\n';
-                if (dict.h2Heading) {
-                    output += '<h2 class="oho-animate fade-in">' + dict.h2Heading + '</h2>\n';
+                if (h2Heading) {
+                    output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
                 }
-                if (dict.generalDescription) {
-                    output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + dict.generalDescription + '</p></div>\n';
+                if (generalDescription) {
+                    output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + generalDescription + '</p></div>\n';
                 }
                 if ((linkTitle) && (internalLinkURL && internalLinkText)) {
                     output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ internalLinkURL + '" title="' + internalLinkText + '">' + linkTitle + '</a></div>\n';
