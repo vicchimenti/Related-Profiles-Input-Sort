@@ -167,9 +167,6 @@ try {
                 if (generalDescription) {
                     output += '<div class="global-spacing--2x oho-animate fade-in">' + generalDescription + '</div>';
                 }
-                // output += '                     <div class="global-spacing--2x oho-animate fade-in">\n';
-                // output += '                         <p><t4 type="content" name="General Description" output="normal" modifiers="nl2br" /></p>\n';
-                // output += '                     </div>\n';
                 if (primaryDept != '') {
                     output += '                     <div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>\n';
                 }
