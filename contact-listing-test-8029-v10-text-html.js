@@ -185,9 +185,6 @@ try {
                 if (generalDescription != '' ) {
                     output += '<p>' + generalDescription + '</p>\n';
                 }
-                // output += '                        <p>\n';
-                // output += '                            <t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />\n';
-                // output += '                        </p>\n';
                 output += '                    </div>\n';
                 output += '                    <div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in">\n';
                 output += '                        <t4 type="content" name="Optional Link Internal Link" output="selective-output" modifiers="nav_sections" process-format="true" format="<a href=&quot;<t4 type=&quot;content&quot; name=&quot;Optional Link Internal Link&quot; output=&quot;linkurl&quot; modifiers=&quot;nav_sections&quot; />&quot;><t4 type=&quot;content&quot; name=&quot;Optional Link Title&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a>" />\n';
