@@ -153,10 +153,10 @@ try {
                 profilesOutput += ' </li>\n';
             }
 
-            // if there is output wrap in UL tags
+            // if there is output wrap in section
             if (profilesOutput != '') {
-                output += ' <t4 type="meta" meta="html_anchor" />';
-                output += ' <section class="profiles-section departments-profiles-swiper global-margin--10x">';
+                output += ' <section class="profiles-section departments-profiles-swiper global-margin--10x" id="<t4 type="meta" meta="content_id" />">\n';
+                output += '    <t4 type="meta" meta="html_anchor" />\n';
                 output += '     <div class="grid-container oho-animate-sequence">\n';
                 if (h2Heading || generalDescription || primaryDept) {
                     output += '<div class="grid-x grid-margin-x"><div class="cell large-9"><div class="section-heading--basic text-margin-reset">';
