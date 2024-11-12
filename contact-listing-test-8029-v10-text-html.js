@@ -224,7 +224,11 @@ try {
                 if (contactListingDict.generalDescription.content) {
                     output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + contactListingDict.generalDescription.content + '</p></div>\n';
                 }
-                if ((linkTitle ! = '') && (internalLinkURL ))
+                if ((contactListingDict.linkTitle.content) && (contactListingDict.internalLinkURL.content && contactListingDict.internalLinkText.content )) {
+                    output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ contactListingDict.internalLinkURL.content + '" title="' + contactListingDict.internalLinkText.content + '">' + contactListingDict.linkTitle.content + '</a></div>\n';
+                } else if (contactListingDict.linkTitle.content && contactListingDict.externalLink.content) {
+                        output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ contactListingDict.internalLinkURL.content + '" title="' + contactListingDict.linkTitle.content + '">' + contactListingDict.linkTitle.content + '</a></div>\n';
+                }
                 output += '                    <div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in">\n';
                 output += '                        <t4 type="content" name="Optional Link Internal Link" output="selective-output" modifiers="nav_sections" process-format="true" format="<a href=&quot;<t4 type=&quot;content&quot; name=&quot;Optional Link Internal Link&quot; output=&quot;linkurl&quot; modifiers=&quot;nav_sections&quot; />&quot;><t4 type=&quot;content&quot; name=&quot;Optional Link Title&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a>" />\n';
                 output += '                        <t4 type="content" name="Optional Link External Link" output="selective-output" process-format="true" format="<a href=&quot;<t4 type=&quot;content&quot; name=&quot;Optional Link External Link&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&quot;><t4 type=&quot;content&quot; name=&quot;Optional Link Title&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a>" />\n';
