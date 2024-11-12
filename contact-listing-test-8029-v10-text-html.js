@@ -126,12 +126,12 @@ try {
          *      optional elements
          *      
          */
-        let = h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
-        let = generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />');
-        let = linkTitle = processTags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />');
-        let = internalLinkURL = processTags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />');
-        let = internalLinkText = processTags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />');
-        let = externalLink = processTags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />');
+        let h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
+        let generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />');
+        let linkTitle = processTags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />');
+        let internalLinkURL = processTags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />');
+        let internalLinkText = processTags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />');
+        let externalLink = processTags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />');
 
  
 
