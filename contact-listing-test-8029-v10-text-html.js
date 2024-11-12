@@ -218,11 +218,11 @@ try {
                 output += '        <div class="grid-x grid-margin-x">\n';
                 output += '            <div class="cell large-9">\n';
                 output += '                <div class="section-heading--basic text-margin-reset">\n';
-                if (h2Heading != '') {
-                    output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
+                if (contactListingDict.h2Heading.content) {
+                    output += '<h2 class="oho-animate fade-in">' + contactListingDict.h2Heading.content + '</h2>\n';
                 }
-                if (generalDescription != '' ) {
-                    output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + generalDescription + '</p></div>\n';
+                if (contactListingDict.generalDescription.content) {
+                    output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + contactListingDict.generalDescription.content + '</p></div>\n';
                 }
                 if ((linkTitle ! = '') && (internalLinkURL ))
                 output += '                    <div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in">\n';
