@@ -214,9 +214,6 @@ try {
                 if (h2Heading || generalDescription || linkTitle) {
                     output += '<div class="grid-x grid-margin-x"><div class="cell large-9"><div class="section-heading--basic text-margin-reset">';
                 }
-                // output += '        <div class="grid-x grid-margin-x">\n';
-                // output += '            <div class="cell large-9">\n';
-                // output += '                <div class="section-heading--basic text-margin-reset">\n';
                 if (h2Heading) {
                     output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
                 }
@@ -228,9 +225,6 @@ try {
                 } else if (linkTitle && externalLink) {
                         output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ externalLink+ '" title="' + linkTitle + '">' + linkTitle + '</a></div>\n';
                 }
-                output += '                </div>\n';
-                output += '            </div>\n';
-                output += '        </div>\n';
                 if (h2Heading || generalDescription || linkTitle) {
                     output += '</div></div></div>';
                 }
