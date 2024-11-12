@@ -122,21 +122,14 @@ try {
             return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
         }
 
+
+
+
+
         /***
          *      optional elements
          *      
          */
-        // let dict = {
-            
-        //     h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
-        //     generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
-        //     linkTitle = processTags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />'),
-        //     internalLinkURL = processTags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />'),
-        //     internalLinkText = processTags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />'),
-        //     externalLink = processTags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />'),
-
-        // };
-
         let h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
         let generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />');
         let linkTitle = processTags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />');
@@ -144,10 +137,7 @@ try {
         let internalLinkText = processTags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />');
         let externalLink = processTags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />');
 
- 
-
         
-
         // create profiles object
         // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
         profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
