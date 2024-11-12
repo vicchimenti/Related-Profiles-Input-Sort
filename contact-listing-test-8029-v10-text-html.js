@@ -214,11 +214,11 @@ try {
                 output += '        <div class="grid-x grid-margin-x">\n';
                 output += '            <div class="cell large-9">\n';
                 output += '                <div class="section-heading--basic text-margin-reset">\n';
-                if (dict.h2Heading.content) {
-                    output += '<h2 class="oho-animate fade-in">' + dict.h2Heading.content + '</h2>\n';
+                if (dict.h2Heading) {
+                    output += '<h2 class="oho-animate fade-in">' + dict.h2Heading + '</h2>\n';
                 }
-                if (dict.generalDescription.content) {
-                    output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + dict.generalDescription.content + '</p></div>\n';
+                if (dict.generalDescription) {
+                    output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + dict.generalDescription + '</p></div>\n';
                 }
                 if ((linkTitle) && (internalLinkURL && internalLinkText)) {
                     output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ internalLinkURL + '" title="' + internalLinkText + '">' + linkTitle + '</a></div>\n';
