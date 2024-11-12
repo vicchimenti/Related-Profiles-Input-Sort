@@ -149,7 +149,7 @@ try {
                 if (h2Heading != '') {
                     output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
                 }
-                                output += '                     <div class="global-spacing--2x oho-animate fade-in">\n';
+                output += '                     <div class="global-spacing--2x oho-animate fade-in">\n';
                 output += '                         <p><t4 type="content" name="General Description" output="normal" modifiers="nl2br" /></p>\n';
                 output += '                     </div>\n';
                 if (primaryDept != '') {
