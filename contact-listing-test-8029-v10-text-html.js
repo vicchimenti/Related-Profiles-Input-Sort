@@ -171,6 +171,7 @@ try {
             // if there is output wrap in UL tags
             if (profilesOutput != '') {
                 let h2Heading = processT4Tags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
+                let generalDescription = processT4Tags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />');
                 output += '<section class="contact-listing-section global-margin--10x" id="<t4 type="meta" meta="content_id" />">\n';
                 output += '    <t4 type="meta" meta="html_anchor" />\n';
                 output += '    <div class="grid-container oho-animate-sequence">\n';
@@ -181,6 +182,9 @@ try {
                     output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
                 }
                 output += '                    <div class="global-spacing--2x oho-animate fade-in">\n';
+                if (generalDescription != '' ) {
+                    output += '<p>' + generalDescription + '</p>\n';
+                }
                 output += '                        <p>\n';
                 output += '                            <t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />\n';
                 output += '                        </p>\n';
