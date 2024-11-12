@@ -117,6 +117,13 @@ try {
          * 
          * 
          */
+        let optional = {
+
+            primaryDept: processTags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />'),
+            h2Heading: processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
+            generalDescription: processTags('<t4 type="content" name="General Description" output="normal" modifiers="nl2br" />')
+
+        };
         let primaryDept = processTags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />');
         let h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
         let generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="nl2br" />');
@@ -158,19 +165,19 @@ try {
                 output += ' <section class="profiles-section departments-profiles-swiper global-margin--10x" id="<t4 type="meta" meta="content_id" />">\n';
                 output += '    <t4 type="meta" meta="html_anchor" />\n';
                 output += '     <div class="grid-container oho-animate-sequence">\n';
-                if (h2Heading || generalDescription || primaryDept) {
+                if (optional.h2Heading || optional.generalDescription || optional.primaryDept) {
                     output += '<div class="grid-x grid-margin-x"><div class="cell large-9"><div class="section-heading--basic text-margin-reset">';
                 }
-                if (h2Heading != '') {
-                    output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>';
+                if (optional.h2Heading) {
+                    output += '<h2 class="oho-animate fade-in">' + optional.h2Heading + '</h2>';
                 }
-                if (generalDescription) {
-                    output += '<div class="global-spacing--2x oho-animate fade-in">' + generalDescription + '</div>';
+                if (optional.generalDescription) {
+                    output += '<div class="global-spacing--2x oho-animate fade-in">' + optional.generalDescription + '</div>';
                 }
-                if (primaryDept != '') {
+                if (optional.primaryDept) {
                     output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>';
                 }
-                if (h2Heading || generalDescription || primaryDept) {
+                if (optional.h2Heading || optional.generalDescription || optional.primaryDept) {
                     output += '</div></div></div>';
                 }
                 output += '         <div class="global-spacing--6x">\n';
