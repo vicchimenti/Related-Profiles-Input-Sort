@@ -211,9 +211,12 @@ try {
                 output += '<section class="contact-listing-section global-margin--10x" id="<t4 type="meta" meta="content_id" />">\n';
                 output += '    <t4 type="meta" meta="html_anchor" />\n';
                 output += '    <div class="grid-container oho-animate-sequence">\n';
-                output += '        <div class="grid-x grid-margin-x">\n';
-                output += '            <div class="cell large-9">\n';
-                output += '                <div class="section-heading--basic text-margin-reset">\n';
+                if (h2Heading || generalDescription || linkTitle) {
+                    output += '<div class="grid-x grid-margin-x"><div class="cell large-9"><div class="section-heading--basic text-margin-reset">';
+                }
+                // output += '        <div class="grid-x grid-margin-x">\n';
+                // output += '            <div class="cell large-9">\n';
+                // output += '                <div class="section-heading--basic text-margin-reset">\n';
                 if (h2Heading) {
                     output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
                 }
@@ -228,6 +231,9 @@ try {
                 output += '                </div>\n';
                 output += '            </div>\n';
                 output += '        </div>\n';
+                if (h2Heading || generalDescription || linkTitle) {
+                    output += '</div></div></div>';
+                }
                 output += '        <div id="data-container"' + (profiles.length > 10 ? ' class="add-pagination"' : '') + '>\n';
                 output += '             ' + profilesOutput + '\n';
                 output += '        </div>\n';
