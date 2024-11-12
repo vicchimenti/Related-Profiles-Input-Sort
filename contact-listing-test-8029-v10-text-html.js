@@ -17,6 +17,29 @@ try {
     );
     
     with (FullListOutputImports) {
+
+        /***
+         *      Extract values from T4 element tags
+         *      and confirm valid existing content item field
+         */
+        function getContentValues(tag) {
+            try {
+                let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
+                return {
+                    isError: false,
+                    content: _tag == '' ? null : _tag
+                };
+            } catch (error) {
+                return {
+                    isError: true,
+                    message: error.message
+                };
+            }
+        }
+
+        contactListing {
+
+        }
         // variables
         var profilesNav = '<t4 type="navigation" name="Contact Listing Test" id="1088" />',
         profiles, profilesOutput, output = '';
