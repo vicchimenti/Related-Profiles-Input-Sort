@@ -161,9 +161,9 @@ try {
                 if (h2Heading || generalDescription || primaryDept) {
                     output += '<div class="grid-x grid-margin-x"><div class="cell large-9"><div class="section-heading--basic text-margin-reset">';
                 }
-                output += '         <div class="grid-x grid-margin-x">\n';
-                output += '             <div class="cell large-9">\n';
-                output += '                 <div class="section-heading--basic text-margin-reset">\n';
+                // output += '         <div class="grid-x grid-margin-x">\n';
+                // output += '             <div class="cell large-9">\n';
+                // output += '                 <div class="section-heading--basic text-margin-reset">\n';
                 if (h2Heading != '') {
                     output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
                 }
@@ -176,9 +176,9 @@ try {
                 if (h2Heading || generalDescription || primaryDept) {
                     output += '</div></div></div>';
                 }
-                output += '                 </div>\n';
-                output += '             </div>\n';
-                output += '         </div>\n';
+                // output += '                 </div>\n';
+                // output += '             </div>\n';
+                // output += '         </div>\n';
                 output += '         <div class="global-spacing--6x">\n';
                 output += '             <div class="swiper-container oho-animate-sequence">\n';
                 output += '                 <ul class="swiper-wrapper">\n';
