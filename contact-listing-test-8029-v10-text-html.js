@@ -150,7 +150,7 @@ try {
             internalLinkText = getContentValues('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />'),
             externalLink = getContentValues('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />')
 
-        }
+        };
 
         
 
