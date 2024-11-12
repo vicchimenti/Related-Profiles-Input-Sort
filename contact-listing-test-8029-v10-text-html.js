@@ -117,25 +117,6 @@ try {
         }
 
 
-        /***
-         *      Extract values from T4 element tags
-         *      and confirm valid existing content item field
-         */
-        // function getContentValues(tag) {
-        //     try {
-        //         let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
-        //         return {
-        //             isError: false,
-        //             content: _tag == '' ? null : _tag
-        //         };
-        //     } catch (error) {
-        //         return {
-        //             isError: true,
-        //             message: error.message
-        //         };
-        //     }
-        // }
-
         function processTags(t4Tag) {
             myContent = content || null;
             return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
