@@ -188,6 +188,7 @@ try {
                 if (generalDescription != '' ) {
                     output += '<div class="global-spacing--2x oho-animate fade-in"><p>' + generalDescription + '</p></div>\n';
                 }
+                if ((linkTitle ! = '') && (internalLinkURL ))
                 output += '                    <div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in">\n';
                 output += '                        <t4 type="content" name="Optional Link Internal Link" output="selective-output" modifiers="nav_sections" process-format="true" format="<a href=&quot;<t4 type=&quot;content&quot; name=&quot;Optional Link Internal Link&quot; output=&quot;linkurl&quot; modifiers=&quot;nav_sections&quot; />&quot;><t4 type=&quot;content&quot; name=&quot;Optional Link Title&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a>" />\n';
                 output += '                        <t4 type="content" name="Optional Link External Link" output="selective-output" process-format="true" format="<a href=&quot;<t4 type=&quot;content&quot; name=&quot;Optional Link External Link&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&quot;><t4 type=&quot;content&quot; name=&quot;Optional Link Title&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a>" />\n';
