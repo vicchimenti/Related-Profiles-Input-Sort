@@ -206,12 +206,6 @@ try {
 
             // if there is output wrap in UL tags
             if (profilesOutput != '') {
-                // let h2Heading = processT4Tags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
-                // let generalDescription = processT4Tags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />');
-                // let linkTitle = processT4Tags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />');
-                // let internalLinkURL = processT4Tags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />');
-                // let internalLinkText = processT4Tags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />');
-                // let externalLink = processT4Tags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />');
                 output += '<section class="contact-listing-section global-margin--10x" id="<t4 type="meta" meta="content_id" />">\n';
                 output += '    <t4 type="meta" meta="html_anchor" />\n';
                 output += '    <div class="grid-container oho-animate-sequence">\n';
