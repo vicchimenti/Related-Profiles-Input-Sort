@@ -43,6 +43,12 @@ try {
             }
         }
 
+
+
+        /***
+         *      content dictionary of optional elements
+         *      
+         */
         let contactListingDict = {
 
             h2Heading = getContentValues('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
