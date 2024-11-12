@@ -138,14 +138,19 @@ try {
 
             // if there is output wrap in UL tags
             if (profilesOutput != '') {
-                var primaryDept = processT4Tags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />');
+                let primaryDept = processT4Tags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />');
+                let h2Heading = processT4Tags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
                 output += ' <t4 type="meta" meta="html_anchor" />';
                 output += ' <section class="profiles-section departments-profiles-swiper global-margin--10x">';
                 output += '     <div class="grid-container oho-animate-sequence">\n';
                 output += '         <div class="grid-x grid-margin-x">\n';
                 output += '             <div class="cell large-9">\n';
                 output += '                 <div class="section-heading--basic text-margin-reset">\n';
-                output += '                     <h2 class="oho-animate fade-in"><t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" /></h2>\n';
+                if (h2Heading != '') {
+                    output += '<h2 class="oho-animate fade-in">' + h2Heading + '</h2>\n';
+                }
+                
+                // output += '                     <h2 class="oho-animate fade-in"><t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" /></h2>\n';
                 output += '                     <div class="global-spacing--2x oho-animate fade-in">\n';
                 output += '                         <p><t4 type="content" name="General Description" output="normal" modifiers="nl2br" /></p>\n';
                 output += '                     </div>\n';
