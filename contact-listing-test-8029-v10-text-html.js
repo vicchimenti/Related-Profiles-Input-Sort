@@ -18,7 +18,7 @@ try {
     
     with (FullListOutputImports) {
         // variables
-        var profilesNav = '<t4 type="navigation" name="Contact Listing Keyword Search" id="997" />',
+        var profilesNav = '<t4 type="navigation" name="Contact Listing Test" id="1088" />',
         profiles, profilesOutput, output = '';
 
         log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
