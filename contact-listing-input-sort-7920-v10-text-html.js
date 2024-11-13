@@ -149,6 +149,7 @@ try {
 
         // create profiles object replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
         profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
+        
 
         /***
          * 
@@ -175,20 +176,6 @@ try {
             // If neither item is in the priority array, sort alphabetically by lastName,firstName
             return a.sortName.localeCompare(b.sortName);
         };
-
-
-
-        // defining main functions
-        // function sortByName( el1, el2 ) {
-
-        //     let a = el1.nameSort;
-        //     let b = el2.nameSort;
-
-        //     return (a < b) ? -1 : (a > b) ? 1 : 0;
-        // }
-
-
-
 
 
 
