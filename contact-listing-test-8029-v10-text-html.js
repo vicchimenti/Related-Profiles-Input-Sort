@@ -141,13 +141,6 @@ try {
 
         };
 
-        //  let h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
-        // let generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />');
-        // let linkTitle = processTags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />');
-        // let internalLinkURL = processTags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />');
-        // let internalLinkText = processTags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />');
-        // let externalLink = processTags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />');
-
         
         // create profiles object
         // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
@@ -224,7 +217,7 @@ try {
                 if ((optional.linkTitle) && (optional.internalLinkURL && optional.internalLinkText)) {
                     output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ optional.internalLinkURL + '" title="' + optional.internalLinkText + '">' + optional.linkTitle + '</a></div>\n';
                 } else if (optional.linkTitle && optional.externalLink) {
-                        output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ optional.externalLink+ '" title="' + optional.linkTitle + '">' + optional.linkTitle + '</a></div>\n';
+                    output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in"><a href="'+ optional.externalLink + '" title="' + optional.linkTitle + '">' + optional.linkTitle + '</a></div>\n';
                 }
                 if (optional.h2Heading || optional.generalDescription || optional.linkTitle) {
                     output += '</div></div></div>\n';
