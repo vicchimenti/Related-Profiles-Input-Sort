@@ -25,7 +25,7 @@ try {
 
 
         // variables
-        let profilesNav = '<t4 type="navigation" name="Contact Listing Test" id="997" />',
+        let profilesNav = '<t4 type="navigation" name="Contact Listing Keyword Search" id="997" />',
         profiles, profilesOutput, output = '';
 
 
