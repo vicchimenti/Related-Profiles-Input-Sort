@@ -189,28 +189,7 @@ try {
             
             // sort profiles by priotity input
             profiles = profiles.sort(priorityInput);
-            // profiles = profiles.sort((a, b) => {
-
-            //     const priorityA = priority.indexOf(a.userId);
-            //     const priorityB = priority.indexOf(b.userId);
-        
-            //     // If both items are in the priority array, sort by their priority
-            //     if (priorityA !== -1 && priorityB !== -1) {
-            //       return priorityA - priorityB;
-            //     }
-
-            //       // If only one item is in the priority array, put it first
-            //     if (priorityA !== -1) {
-            //         return -1;
-            //     } else if (priorityB !== -1) {
-            //         return 1;
-            //     } 
-
-            //     // If neither item is in the priority array, sort alphabetically by lastName,firstName
-            //     return a.sortName.localeCompare(b.sortName);
-            // });
-
-
+ 
             // loop through profiles to create output
             for (let i = 0; i < profiles.length; i++) {
               
