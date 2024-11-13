@@ -130,8 +130,6 @@ try {
 
         };
 
-
-
         /**
          * 
          *  Declarations
@@ -208,9 +206,9 @@ try {
 
             // if there is output wrap in UL tags
             if (profilesOutput != '') {
-                output += ' <section class="profiles-section departments-profiles-swiper global-margin--15x">';
-                output += ' <t4 type="meta" meta="html_anchor" />';
-                output += '     <div class="grid-container oho-animate-sequence">\n';
+                output += '<section class="profiles-section departments-profiles-swiper global-margin--15x">';
+                output += '<t4 type="meta" meta="html_anchor" />';
+                output += '<div class="grid-container oho-animate-sequence">\n';
                 if (optional.h2Heading || optional.generalDescription || optional.primaryDept) {
                     output += '<div class="grid-x grid-margin-x"><div class="cell large-9"><div class="section-heading--basic text-margin-reset">';
                 }
@@ -220,17 +218,12 @@ try {
                 if (optional.generalDescription) {
                     output += '<div class="global-spacing--2x oho-animate fade-in">' + optional.generalDescription + '</div>';
                 }
-
-
-                
                 if (optional.primaryDept) {
-                    output += '                     <div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>\n';
+                    output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + optional.primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>\n';
                 }
                 if (optional.h2Heading || optional.generalDescription || optional.primaryDept) {
                     output += '</div></div></div>';
                 }
-
-
                 output += '         <div class="global-spacing--6x">\n';
                 output += '             <div class="swiper-container oho-animate-sequence">\n';
                 output += '                 <ul class="swiper-wrapper">\n';
