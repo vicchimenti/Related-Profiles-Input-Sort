@@ -149,6 +149,32 @@ try {
         // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
         profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
 
+        /***
+         * 
+         *  Priority Sort
+         * 
+         */
+        function prioritySort (a, b) {
+
+            const priorityA = priority.indexOf(a.userId);
+            const priorityB = priority.indexOf(b.userId);
+    
+            // If both items are in the priority array, sort by their priority
+            if (priorityA !== -1 && priorityB !== -1) {
+              return priorityA - priorityB;
+            }
+
+              // If only one item is in the priority array, put it first
+            if (priorityA !== -1) {
+                return -1;
+            } else if (priorityB !== -1) {
+                return 1;
+            } 
+
+            // If neither item is in the priority array, sort alphabetically by lastName,firstName
+            return a.sortName.localeCompare(b.sortName);
+        };
+
 
 
 
@@ -162,26 +188,27 @@ try {
           	let profilesOutput = '';
             
             // sort profiles by priotity input
-            profiles = profiles.sort((a, b) => {
+            profiles = profiles.sort(prioritySort);
+            // profiles = profiles.sort((a, b) => {
 
-                const priorityA = priority.indexOf(a.userId);
-                const priorityB = priority.indexOf(b.userId);
+            //     const priorityA = priority.indexOf(a.userId);
+            //     const priorityB = priority.indexOf(b.userId);
         
-                // If both items are in the priority array, sort by their priority
-                if (priorityA !== -1 && priorityB !== -1) {
-                  return priorityA - priorityB;
-                }
+            //     // If both items are in the priority array, sort by their priority
+            //     if (priorityA !== -1 && priorityB !== -1) {
+            //       return priorityA - priorityB;
+            //     }
 
-                  // If only one item is in the priority array, put it first
-                if (priorityA !== -1) {
-                    return -1;
-                } else if (priorityB !== -1) {
-                    return 1;
-                } 
+            //       // If only one item is in the priority array, put it first
+            //     if (priorityA !== -1) {
+            //         return -1;
+            //     } else if (priorityB !== -1) {
+            //         return 1;
+            //     } 
 
-                // If neither item is in the priority array, sort alphabetically by lastName,firstName
-                return a.sortName.localeCompare(b.sortName);
-            });
+            //     // If neither item is in the priority array, sort alphabetically by lastName,firstName
+            //     return a.sortName.localeCompare(b.sortName);
+            // });
 
 
             // loop through profiles to create output
