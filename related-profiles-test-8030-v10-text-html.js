@@ -115,7 +115,6 @@ try {
          * 
          *      Optional Elements
          * 
-         * 
          */
         let optional = {
 
@@ -124,16 +123,21 @@ try {
             generalDescription: processTags('<t4 type="content" name="General Description" output="normal" modifiers="nl2br" />')
 
         };
-        // let primaryDept = processTags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />');
-        // let h2Heading = processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />');
-        // let generalDescription = processTags('<t4 type="content" name="General Description" output="normal" modifiers="nl2br" />');
 
-        // create profiles object
-        // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
+        /***
+         * 
+         *      create profiles object
+         *      replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
+         * 
+         */
         profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
   
 
-        // if there are profiles...
+        /***
+         * 
+         *      loop through profiles if there are any
+         * 
+         */
         if (profiles.length > 0) {
           	var profilesOutput = '';
             
