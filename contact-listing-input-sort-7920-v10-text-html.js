@@ -197,7 +197,8 @@ try {
           	let profilesOutput = '';
             
             // sort profiles by nameSort
-            // profiles = profiles.sort(sortByName);
+            // sort profiles by priotity input
+            profiles = profiles.sort(priorityInput);
 
             // sort profiles by priotity input
             profiles = profiles.sort((a, b) => {
