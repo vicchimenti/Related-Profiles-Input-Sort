@@ -118,6 +118,24 @@ try {
         }
 
 
+
+
+        /***
+         *      optional elements
+         *      
+         */
+        let optional = {
+
+            h2Heading: processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
+            generalDescription: processTags('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
+            linkTitle: processTags('<t4 type="content" name="Optional Link Title" output="normal" modifiers="striptags,htmlentities" />'),
+            internalLinkURL: processTags('<t4 type="content" name="Optional Link Internal Link" output="linkurl" modifiers="nav_sections" />'),
+            internalLinkText: processTags('<t4 type="content" name="Optional Link Internal Link" output="linktext" modifiers="nav_sections" />'),
+            externalLink: processTags('<t4 type="content" name="Optional Link External Link" output="normal" modifiers="striptags,htmlentities" />')    
+
+        };
+
+
         // variables
         let profilesNav = '<t4 type="navigation" name="Contact Listing Input Sort Keyword Search" id="1076" />',
         profiles, profilesOutput, output = '';
@@ -131,13 +149,13 @@ try {
 
 
         // defining main functions
-        function sortByName( el1, el2 ) {
+        // function sortByName( el1, el2 ) {
 
-            let a = el1.nameSort;
-            let b = el2.nameSort;
+        //     let a = el1.nameSort;
+        //     let b = el2.nameSort;
 
-            return (a < b) ? -1 : (a > b) ? 1 : 0;
-        }
+        //     return (a < b) ? -1 : (a > b) ? 1 : 0;
+        // }
 
 
 
