@@ -264,27 +264,6 @@ try {
                 if (optional.h2Heading || optional.generalDescription || optional.linkTitle) {
                     output += '</div></div></div>\n';
                 }
-
-                // output += '        <div class="grid-x grid-margin-x">\n';
-                // output += '            <div class="cell large-9">\n';
-                // output += '                <div class="section-heading--basic text-margin-reset">\n';
-                // output += '                    <h2 class="oho-animate fade-in">\n';
-                // output += '                        <t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />\n';
-                // output += '                    </h2>\n';
-                // output += '                    <div class="global-spacing--2x oho-animate fade-in">\n';
-                // output += '                        <p>\n';
-                // output += '                            <t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />\n';
-                // output += '                        </p>\n';
-                // output += '                    </div>\n';
-                // output += '                    <div class="section-heading__link global-spacing--2x oho-animate fade-in oho-animate--in">\n';
-                // output += '                        <t4 type="content" name="Optional Link Internal Link" output="selective-output" modifiers="nav_sections" process-format="true" format="<a href=&quot;<t4 type=&quot;content&quot; name=&quot;Optional Link Internal Link&quot; output=&quot;linkurl&quot; modifiers=&quot;nav_sections&quot; />&quot;><t4 type=&quot;content&quot; name=&quot;Optional Link Title&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a>" />\n';
-                // output += '                        <t4 type="content" name="Optional Link External Link" output="selective-output" process-format="true" format="<a href=&quot;<t4 type=&quot;content&quot; name=&quot;Optional Link External Link&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&quot;><t4 type=&quot;content&quot; name=&quot;Optional Link Title&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a>" />\n';
-                // output += '                    </div>\n';
-                // output += '                </div>\n';
-                // output += '            </div>\n';
-                // output += '        </div>\n';
-
-
                 output += '        <div id="data-container"' + (profiles.length > 10 ? ' class="add-pagination"' : '') + '>\n';
                 output += '             ' + profilesOutput + '\n';
                 output += '        </div>\n';
