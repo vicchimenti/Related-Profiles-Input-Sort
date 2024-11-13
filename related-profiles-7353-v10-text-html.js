@@ -17,7 +17,7 @@ try {
     );
     with (FullListOutputImports) {
         // variables
-        var profilesNav = '<t4 type="navigation" name="Faculty and Staff Related Profiles" id="996" />',
+        var profilesNav = '<t4 type="navigation" name="Related Profiles Test" id="996" />',
         profiles, profilesOutput, output = '';
 
         // defining main functions
@@ -103,13 +103,41 @@ try {
             return renderedHtml;
         }
 
+        function processTags(t4Tag) {
+            myContent = content || null;
+            return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
+        }
 
-        // create profiles object
-        // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
+
+
+
+        /***
+         * 
+         *      Optional Elements
+         * 
+         */
+        let optional = {
+
+            primaryDept: processTags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />'),
+            h2Heading: processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
+            generalDescription: processTags('<t4 type="content" name="General Description" output="normal" modifiers="nl2br" />')
+
+        };
+
+        /***
+         * 
+         *      create profiles object
+         *      replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
+         * 
+         */
         profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
   
 
-        // if there are profiles...
+        /***
+         * 
+         *      loop through profiles if there are any
+         * 
+         */
         if (profiles.length > 0) {
           	var profilesOutput = '';
             
@@ -136,25 +164,26 @@ try {
                 profilesOutput += ' </li>\n';
             }
 
-            // if there is output wrap in UL tags
+            // if there is output wrap in section
             if (profilesOutput != '') {
-                var primaryDept = processT4Tags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />');
-                output += ' <t4 type="meta" meta="html_anchor" />';
-                output += ' <section class="profiles-section departments-profiles-swiper global-margin--10x">';
+                output += ' <section class="profiles-section departments-profiles-swiper global-margin--10x" id="<t4 type="meta" meta="content_id" />">\n';
+                output += '    <t4 type="meta" meta="html_anchor" />\n';
                 output += '     <div class="grid-container oho-animate-sequence">\n';
-                output += '         <div class="grid-x grid-margin-x">\n';
-                output += '             <div class="cell large-9">\n';
-                output += '                 <div class="section-heading--basic text-margin-reset">\n';
-                output += '                     <h2 class="oho-animate fade-in"><t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" /></h2>\n';
-                output += '                     <div class="global-spacing--2x oho-animate fade-in">\n';
-                output += '                         <p><t4 type="content" name="General Description" output="normal" modifiers="nl2br" /></p>\n';
-                output += '                     </div>\n';
-                if (primaryDept != '') {
-                    output += '                     <div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>\n';
+                if (optional.h2Heading || optional.generalDescription || optional.primaryDept) {
+                    output += '<div class="grid-x grid-margin-x"><div class="cell large-9"><div class="section-heading--basic text-margin-reset">';
                 }
-                output += '                 </div>\n';
-                output += '             </div>\n';
-                output += '         </div>\n';
+                if (optional.h2Heading) {
+                    output += '<h2 class="oho-animate fade-in">' + optional.h2Heading + '</h2>';
+                }
+                if (optional.generalDescription) {
+                    output += '<div class="global-spacing--2x oho-animate fade-in">' + optional.generalDescription + '</div>';
+                }
+                if (optional.primaryDept) {
+                    output += '<div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + optional.primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>';
+                }
+                if (optional.h2Heading || optional.generalDescription || optional.primaryDept) {
+                    output += '</div></div></div>';
+                }
                 output += '         <div class="global-spacing--6x">\n';
                 output += '             <div class="swiper-container oho-animate-sequence">\n';
                 output += '                 <ul class="swiper-wrapper">\n';
