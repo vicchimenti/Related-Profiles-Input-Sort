@@ -147,6 +147,9 @@ try {
         // create a clean array based on the user's input
         let priority = sortRequestArray.map(item => item.trim());
 
+        // create profiles object replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
+        profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
+
         /***
          * 
          *  Priority Sort
@@ -188,39 +191,14 @@ try {
 
 
 
-        // create profiles object
-        // replace removes the trailing comma to form valid JSON - added an empty value could cause other issues
-        profiles = eval('[' + processT4Tags(profilesNav).replace(/,\s*$/, "") + ']');
+
   
         // if there are profiles...
         if (profiles.length > 0) {
           	let profilesOutput = '';
             
-            // sort profiles by nameSort
             // sort profiles by priotity input
             profiles = profiles.sort(priorityInput);
-
-            // sort profiles by priotity input
-            // profiles = profiles.sort((a, b) => {
-
-            //     const priorityA = priority.indexOf(a.userId);
-            //     const priorityB = priority.indexOf(b.userId);
-        
-            //     // If both items are in the priority array, sort by their priority
-            //     if (priorityA !== -1 && priorityB !== -1) {
-            //         return priorityA - priorityB;
-            //     }
-
-            //         // If only one item is in the priority array, put it first
-            //     if (priorityA !== -1) {
-            //         return -1;
-            //     } else if (priorityB !== -1) {
-            //         return 1;
-            //     } 
-
-            //     // If neither item is in the priority array, sort alphabetically by lastName,firstName
-            //     return a.sortName.localeCompare(b.sortName);
-            // });
 
             // loop through profiles to create output
             for (let i=0; i<profiles.length; i++) {
