@@ -221,13 +221,13 @@ try {
                     output += '<div class="global-spacing--2x oho-animate fade-in">' + optional.generalDescription + '</div>';
                 }
 
-                output += '         <div class="grid-x grid-margin-x">\n';
-                output += '             <div class="cell large-9">\n';
-                output += '                 <div class="section-heading--basic text-margin-reset">\n';
-                output += '                     <h2 class="oho-animate fade-in"><t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" /></h2>\n';
-                output += '                     <div class="global-spacing--2x oho-animate fade-in">\n';
-                output += '                         <p><t4 type="content" name="General Description" output="normal" modifiers="nl2br" /></p>\n';
-                output += '                     </div>\n';
+                // output += '         <div class="grid-x grid-margin-x">\n';
+                // output += '             <div class="cell large-9">\n';
+                // output += '                 <div class="section-heading--basic text-margin-reset">\n';
+                // output += '                     <h2 class="oho-animate fade-in"><t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" /></h2>\n';
+                // output += '                     <div class="global-spacing--2x oho-animate fade-in">\n';
+                // output += '                         <p><t4 type="content" name="General Description" output="normal" modifiers="nl2br" /></p>\n';
+                // output += '                     </div>\n';
                 
                 if (primaryDept != '') {
                     output += '                     <div class="section-heading__link global-spacing--2x oho-animate fade-in"><a href="<t4 type="navigation" name="Faculty and Staff Bio Link to Home" id="995" />?staffDepartment=<?php echo urlencode(strtolower("' + primaryDept + '")); ?>">All Faculty &amp; Staff</a></div>\n';
@@ -235,9 +235,9 @@ try {
                 if (optional.h2Heading || optional.generalDescription || optional.primaryDept) {
                     output += '</div></div></div>';
                 }
-                output += '                 </div>\n';
-                output += '             </div>\n';
-                output += '         </div>\n';
+                // output += '                 </div>\n';
+                // output += '             </div>\n';
+                // output += '         </div>\n';
 
                 output += '         <div class="global-spacing--6x">\n';
                 output += '             <div class="swiper-container oho-animate-sequence">\n';
