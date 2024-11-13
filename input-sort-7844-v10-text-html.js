@@ -123,7 +123,10 @@ try {
          * 
          */
         let optional = {
+            
             primaryDept: processT4Tags('<t4 type="content" name="Primary Department" output="normal" display_field="value" />'),
+            h2Heading: processTags('<t4 type="content" name="Heading" output="normal" modifiers="striptags,htmlentities" />'),
+            generalDescription: processTags('<t4 type="content" name="General Description" output="normal" modifiers="nl2br" />')
 
         };
 
