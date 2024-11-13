@@ -154,7 +154,7 @@ try {
          *  Priority Sort
          * 
          */
-        function prioritySort (a, b) {
+        function priorityInput (a, b) {
 
             const priorityA = priority.indexOf(a.userId);
             const priorityB = priority.indexOf(b.userId);
@@ -188,7 +188,7 @@ try {
           	let profilesOutput = '';
             
             // sort profiles by priotity input
-            profiles = profiles.sort(prioritySort);
+            profiles = profiles.sort(priorityInput);
             // profiles = profiles.sort((a, b) => {
 
             //     const priorityA = priority.indexOf(a.userId);
