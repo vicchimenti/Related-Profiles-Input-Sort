@@ -17,7 +17,7 @@ try {
     );
     with (FullListOutputImports) {
         // variables
-        var profilesNav = '<t4 type="navigation" name="Related Profiles Test" id="996" />',
+        var profilesNav = '<t4 type="navigation" name="Faculty and Staff Related Profiles" id="996" />',
         profiles, profilesOutput, output = '';
 
         // defining main functions
