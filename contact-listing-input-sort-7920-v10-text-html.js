@@ -1,5 +1,5 @@
 /* 
-    Contact listing
+    Contact Listing Input Sort
     v10/text/html
 
     Programmable Layout that reads in profiles as JSON then sorts based on the nameSort node
