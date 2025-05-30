@@ -167,7 +167,7 @@ try {
                 profilesOutput += '                    <div class="global-spacing--2x">\n';
                 profilesOutput += '                        <p>' + profiles[i].positionTitles + '</p>\n';
                 profilesOutput += '                    </div>\n';
-                if (profiles[i].phone != '' || profiles[i].email != '' || profiles[i].buildingRoomNumber != '') {
+                if (profiles[i].phone != '' || profiles[i].email != '') {
                     profilesOutput += '                   <div class="global-spacing--3x">\n';
                     profilesOutput += '                        <ul class="icon-list">\n';
                     if (profiles[i].phone != '') {
