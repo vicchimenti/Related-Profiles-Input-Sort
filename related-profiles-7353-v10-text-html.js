@@ -20,13 +20,7 @@ try {
         var profilesNav = '<t4 type="navigation" name="Faculty and Staff Related Profiles" id="996" />',
         profiles, profilesOutput, output = '';
 
-        // defining main functions
-        // function sortByName( el1, el2 ) {
-        //     var a = el1.nameSort;
-        //     var b = el2.nameSort;
-        //     return (a < b) ? -1 : (a > b) ? 1 : 0;
-        // }
-
+        
         function sortByName(el1, el2) {
             const lastCompare = el1.lastName.trim().toLowerCase()
                 .localeCompare(el2.lastName.trim().toLowerCase(), 'en', { sensitivity: 'base' });
