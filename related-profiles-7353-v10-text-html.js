@@ -21,11 +21,24 @@ try {
         profiles, profilesOutput, output = '';
 
         // defining main functions
-        function sortByName( el1, el2 ) {
-            var a = el1.nameSort;
-            var b = el2.nameSort;
-            return (a < b) ? -1 : (a > b) ? 1 : 0;
+        // function sortByName( el1, el2 ) {
+        //     var a = el1.nameSort;
+        //     var b = el2.nameSort;
+        //     return (a < b) ? -1 : (a > b) ? 1 : 0;
+        // }
+
+        function sortByName(el1, el2) {
+            const lastCompare = el1.lastName.trim().toLowerCase()
+                .localeCompare(el2.lastName.trim().toLowerCase(), 'en', { sensitivity: 'base' });
+
+            if (lastCompare !== 0) {
+                return lastCompare; // sort by last name
+            }
+
+            return el1.firstName.trim().toLowerCase()
+                .localeCompare(el2.firstName.trim().toLowerCase(), 'en', { sensitivity: 'base' });
         }
+
 
         function getCachedSectionFromId(sectionID) {
             if (typeof sectionID === 'undefined') {
